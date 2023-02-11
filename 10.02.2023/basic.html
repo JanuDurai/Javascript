@@ -7,13 +7,24 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Query Selector-1st element</p>
+    <p id="paraele">Query Selector-1st element</p>
     <p>Query Selector-2nd element</p>
+    <input type="button" value="html_funcall" id="funcall_html" onclick="htmlcall()">
+    <input type="button" value="js_funcall" id="funcall_js">
     <script>
-      var querySelector= Document.querySelector("p")
-         querySelector.Innertext="Query Slector"
+      var paraele=document.getElementById("paraele");
+      paraele.innerText="para text changed"
+      var butt_ele=document.getElementById("funcall_html")
+        function htmlcall(){
+            butt_ele.value="clicked"
+        }
+        var butt_ele2=document.getElementById("funcall_js")
+        butt_ele2.addEventListener("click",js_funcall)
+        function js_funcall(){
+            butt_ele2.value="Clicked"
+        }
     </script>
-
+              
 
 </body>
 </html>
