@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <button>Press me</button>
+        <button id="button">start</button>
+        <button id="button12" onclick="value_change()">start</button>
+       
+
+        <script>
+     var button=document.getElementById("button");
+     button.addEventListener("click",function(){
+        button.innerText="stop" }) 
+        var button12=document.getElementById("button12");
+      function value_change(){
+      button12.innerText="stop";
+      }
+      
+const button = document.querySelector("button");
+
+function greet() {
+  const name = prompt("What is your name?");
+  alert(`Hello ${name}, nice to see you!`);
+}
+
+button.addEventListener("click", greet);
+
+       </script>
+    </body>
+</html>
