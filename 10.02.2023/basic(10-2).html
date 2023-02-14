@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="paraele">Query Selector-1st element</p>
+    <p>Query Selector-2nd element</p>
+    <input type="button" value="html_funcall" class=button2 onclick=text_change()>
+    <input type="button" value="js_funcall" class="button2">
+    <input type="button" value="paradisp" id="paradisp" onclick="para_display()">
+    <script>
+          var paraele=document.getElementById("paraele");
+            paraele.innerText="para text changed"                                                                            
+             var butt=document.getElementByclassname("button2")
+             butt.addEventListener("click",text_change)
+            function text_change(){
+                butt.value="clicked"; }
+         
+        function para_display(){
+            var para=document.createelement("p")
+            para.innercontent="when button clicked para content displayed"
+            document.body.appendChild(para)
+        }
+    </script>
+              
+
+</body>
+</html>
