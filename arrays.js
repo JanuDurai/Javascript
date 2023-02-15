@@ -16,3 +16,5 @@ array.splice(5,1,80)
 
 array.splice(4,2,80,90,100);
 console.log(array)
+var doubled_array=array.map((item)=>item*2)
+console.log(""doubled_array)

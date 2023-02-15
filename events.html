@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+/* 
+        /* #change_color:hover{
+            /* background-color:gainsboro; */
+    </style>
+</head>
+<body>
+    <!-- <button id="color_change">click here to change color</button> -->
+    <script>
+        var body=document.body;
+        var color_change=document.createElement("button");
+        body.appendChild(color_change);
+      color_change.textContent="click here-color change";
+      color_change.setAttribute("id","change_color");
+    color_change.addEventListener("click",color)
+    function color(){
+     color_change.style.backgroundColor="blue";
+    }
+    </script>
+</body>
+</html>

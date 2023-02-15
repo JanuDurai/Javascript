@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="anonymous_func">press here</button>
+  <p id="anonymous_funccontent"></p>
+  <p id="arrow_func"></p><br>
+  <input type="text" id="keypress">
+  <p id="paragraph"></p>
+  <p id="keypress_content"></p>
+  <script src="js_link_1.js"></script>
+  <script src="js_link_2.js"></script>
+
+  <script>
+    alertmessage();
+    function alertmessage() {
+      alert("Warning!!!")
+
+      var button1 = document.getElementById("anonymous_func");
+      var para = document.getElementById("anonymous_funccontent");
+      var arrowfun_para = document.getElementById("arrow_func")
+      button1.addEventListener("click", function (event) {
+        para.innerText = "Anonymous function";
+      })
+      button1.addEventListener("click", (event) => {
+        arrowfun_para.innerText = "Arrow function";
+      })
+      var textbox = document.getElementById("keypress")
+      var keypress_content = document.getElementById("keypress_content")
+      textbox.addEventListener("keydown", () => (keypress_content.innerText = `You are pressed \" ${event.key} \" key`))
+    }
+    greeting();
+  </script>
+  <script src="functions.js"></script>
+</body>
+
+</html>

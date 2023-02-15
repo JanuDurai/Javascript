@@ -41,8 +41,10 @@ console.log("str to uppercase : " + string.toUpperCase());
 var actualstr="vannila";
 var update=actualstr.replace("vann","moz")
 console.log("actualstr: "+actualstr + " updatedstr: "+update)
-      actualstr=actualstr.replace("vann","moz")
-      console.log("To change the actual str: "+actualstr);
+      // actualstr=actualstr.replace("vann","moz")
+      // console.log("To change the actual str: "+actualstr);
 
-     var replaceallstr="stringindex".replaceAll("is","was");
-     console.log(replaceallstr)
+    
+var stringinde="apple";
+var index=stringinde.indexOf('p')
+console.log(stringinde.indexOf('p',index+1))
