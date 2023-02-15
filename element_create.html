@@ -8,14 +8,13 @@
 </head>
 <body>
     <script>
-        var body=document.body;
-        var para_create=document.createElement("p");
+         var body=document.body;
+         var para_create=document.createElement("p");
         para_create.setAttribute("class","para_create");
-        body.appendChild("para_create");
-
         var button=document.createElement("button");
         button.textContent="click here";
-        body.appendChild("button");
+        body.append(button);
+        body.append(para_create);        
         button.addEventListener("click",()=>
         { para_create.innerText="This element created using js func"})
     </script>
