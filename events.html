@@ -1,28 +1,303 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-/* 
-        /* #change_color:hover{
-            /* background-color:gainsboro; */
-    </style>
-</head>
-<body>
-    <!-- <button id="color_change">click here to change color</button> -->
-    <script>
-        var body=document.body;
-        var color_change=document.createElement("button");
-        body.appendChild(color_change);
-      color_change.textContent="click here-color change";
-      color_change.setAttribute("id","change_color");
-    color_change.addEventListener("click",color)
-    function color(){
-     color_change.style.backgroundColor="blue";
-    }
-    </script>
-</body>
-</html>
+<!DOCTYPE html> 
+
+<html lang="en"> 
+
+<head> 
+
+    <meta charset="UTF-8"> 
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <title>Document</title> 
+
+    <style> 
+
+        #double_click{ 
+
+            margin:10px 10px; 
+
+            border:5px solid black; 
+
+            padding:10px 10px; 
+
+            display:block; 
+
+            user-select:none; 
+
+            width:200px; 
+
+        } 
+
+        #change_color,#mouseover,#abort,button{ 
+
+            display:inline-block; 
+
+        } 
+
+        #form,#bubbling{ 
+
+            margin:10px 10px; 
+
+            border:5px solid black; 
+
+            width: 200px; height: 160px; 
+
+            padding:10px 20px; 
+
+            border-radius:10px; 
+
+            display:inline-block 
+
+        } 
+
+    </style> 
+
+</head> 
+
+<body> 
+
+    <input type="text" placeholder="Enter name" id="textbox"> 
+
+   <p id="keyboard"></p> 
+
+    <aside id="double_click"> 
+
+        <h2>Here! is the heading</h2> 
+
+        <p >Double click here to maximize the content</p> 
+
+    </aside> 
+
+    <ul id="mouseover"> 
+
+        <li>element-1</li> 
+
+        <li>element-2</li> 
+
+        <li>element-3</li> 
+
+    </ul><br> 
+
+    <button id="abort">abort signal</button><br> 
+
+    <button onclick="alert('Warning')">alert</button><br> 
+
+    <input type="checkbox" id="checkbox"><label>Check box</label> 
+
+    <p id="preventdefault"></p> 
+
+        <form id="form"> 
+
+            <div><label>Enter name:</label><input type="text" id="name"></div> 
+
+            <div><label>Enter dept:</label><input type="text" id="dept"></div> 
+
+           <div><input type="submit" id="submit" value="submit"></div> 
+
+            <div><p id="formpara"></p></div> 
+
+        </form> 
+
+      <div id="bubbling"> 
+
+        <button id="but_bubble">bubbling</button> 
+
+        <pre id="bubble_text"></pre> 
+
+      </div> 
+
+      
+
+ 
+ 
+
+   <script> 
+
+        var body=document.body; 
+
+        var button=document.createElement("button");  
+
+        button.textContent="click here-color change"; 
+
+        body.appendChild(button); 
+
+        button.setAttribute("id","change_color"); 
+
+        button.addEventListener("click",color) 
+
+    function color(){ 
+
+     button.style.backgroundColor="yellow"; 
+
+     button.style.color="red";      
+
+    } 
+
+    var controller=new AbortController(); 
+
+       var butt=document.getElementById("abort") 
+
+       butt.addEventListener("click",()=> { 
+
+        var colors=`rgb(${random(255)},${random(255)},${random(255)})`; 
+
+        body.style.backgroundColor=colors; 
+
+       },{signal:controller.signal}); 
+
+ 
+ 
+
+     function random(num){ 
+
+        return Math.floor(Math.random()*(num+1)) 
+
+     } 
+
+ 
+ 
+
+   var textbox=document.getElementById("textbox"); 
+
+   textbox.addEventListener("focus",(event)=>{ 
+
+      textbox.style.backgroundColor="gray"; 
+
+   }) 
+
+       textbox.addEventListener("blur",(event)=>{  
+
+      textbox.style.backgroundColor="green"; 
+
+       
+
+   })  
+
+        
+
+   var double_click=document.getElementById("double_click");  
+
+     double_click.addEventListener("dblclick",(event)=>{ 
+
+        double_click.style.backgroundColor="yellow"; 
+
+     }) 
+
+     
+
+     var mousepoint=document.getElementById("mouseover") 
+
+     mousepoint.addEventListener("mouseover",(event)=>{  
+
+        event.target.style.color="blue";  
+
+        setTimeout(()=>{ 
+
+            event.target.style.color=""; },1000); 
+
+     }); 
+
+     mousepoint.addEventListener("mouseout",(event)=>{  
+
+        event.target.style.color="green"; 
+
+        setTimeout(()=>{ 
+
+            event.target.style.color=""; },1000); 
+
+     }); 
+
+     mousepoint.addEventListener("mouseleave",(event)=>{  
+
+        event.target.style.color="purple"; 
+
+        setTimeout(()=>{ 
+
+            event.target.style.color=""; },2000); 
+
+     }); 
+
+     var keyboard=document.getElementById("keyboard") 
+
+      textbox.addEventListener("keyup",(event)=>{ 
+
+        keyboard.textContent=`You pressed ${event.key}`; 
+
+     }) 
+
+ 
+ 
+
+     var keyboard=document.getElementById("keyboard") 
+
+      textbox.addEventListener("keypress",(event)=>{ 
+
+        keyboard.textContent=`You pressed ${event.key} `; 
+
+         }) 
+
+         document.getElementById("checkbox").addEventListener("click",(event)=>{ 
+
+            event.preventDefault(); 
+
+        document.getElementById("preventdefault").innerText="Preventdefault"; 
+
+         }) 
+
+ 
+ 
+
+         var name=document.getElementById("name"); 
+
+         var dept=document.getElementById("dept"); 
+
+         var submit=document.getElementById("submit"); 
+
+         var form=document.getElementById("form") 
+
+         form.addEventListener('submit',preventdefault); 
+
+         function preventdefault(event){ 
+
+            if(name.value===""||dept.value===""){ 
+
+               event.preventDefault(); 
+
+             document.getElementById("formpara").innerText="Please fill both the fields"} 
+
+            } 
+
+        var bubbling=document.getElementById("bubbling"); 
+
+        var bubble_para=document.getElementById("bubble_text"); 
+
+        var bubble_but=document.getElementById("but_bubble"); 
+
+         
+
+        document.body.addEventListener("click",eventhandle); 
+
+        bubbling.addEventListener("click",eventhandle) 
+
+        bubble_but.addEventListener("click",eventhandle) 
+ 
+        function eventhandle(e){ 
+
+            bubble_para.innerText+=`Button is clicked from ${e.currentTarget.tagName}\n` 
+
+        } 
+
+ 
+ 
+
+    </script>  
+
+</body> 
+
+</html>   
+
+ 
+
+ 
