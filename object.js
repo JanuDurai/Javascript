@@ -29,7 +29,30 @@ var object_prop={name:{first_name:"janu",
         console.log("Creating function outside object");
      }
      object_prop.ageprint();
-       var key="color";
-       var value="yellow";
-        var color_obj[key]=value;
-       console.log(`Creating members before obj, Member value is ${color_obj.color}`);
+       var key="year";
+       var value="4";
+        object_prop[key]=value;
+       console.log(`Creating members outside obj, Member value is ${object_prop.year}`);
+
+//   function create_object(name){
+//     var obj={};
+//          obj.name=name;
+//           obj.disp=function (){
+//             console.log(obj.name);
+//          };
+//         return obj;
+//   }
+//     var obj1=create_object("janu");
+//      console.log(obj1.name)
+//      obj1.disp();
+     function create_object(name){
+        this.name=name;
+        this.disp= function(){
+            console.log(this.name);
+        };
+       }
+     var obj2=new create_object("shree");
+    obj2.disp();
+
+    
+
