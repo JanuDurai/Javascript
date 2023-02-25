@@ -1,0 +1,44 @@
+<html lang="en">
+  <head>
+    <title>html_elements</title>
+  </head>
+  <body>
+    <div id="division1">
+      <p>
+        Press <code>Shift</code> + <code>Alt</code> + <code>'c'</code> to click
+        a button
+      </p>
+      <button id="access_key">click</button>
+      <p id="content_edit">contentEditable allow to edit the given content</p>
+    </div>
+    <input type="hidden" name="text_value" />
+ 
+    <script>
+      var butt1 = document.getElementById("access_key");
+      butt1.accessKey = "c";
+      var content_edit = document.getElementById("content_edit");
+      content_edit.contentEditable = "true";
+
+      let para = document.createElement("p");
+      document.body.appendChild(para);
+      para.innerText =
+        "paragraph is appended after the last element of the document";
+
+      var para_ele = document.getElementsByTagName("p");
+      console.log(para_ele.length);
+      var div_ele = document.querySelector("#division1");
+      var div_para = div_ele.querySelectorAll("p");
+      console.log(div_para.length);
+
+      var para_prepend = document.createElement("p");
+      document.body.prepend(para_prepend);
+      para_prepend.innerText =
+        "Paragraph is prepended at the first of the elements in the document";
+
+      var hidden_ele=document.getElementsByName("text_value");
+      console.log(hidden_ele[0].tagName);
+
+      
+    </script>
+  </body>
+</html>
