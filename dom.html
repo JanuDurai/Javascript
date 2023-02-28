@@ -4,10 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Shadow dom</title>
 </head>
 <body>
     <p>DOM-Document Object Model</p>
-    <script src="dom.js"></script>
+    <script>
+       var shadow_host=document.querySelector("p");
+       var shadow_dom=shadow_host.attachShadow({mode:"open"});
+       var para1=document.createElement("p");
+       shadow_dom.append("para1");
+       para1.innertext="Shadow dom inner text";
+      var div_ele=document.createElement("div");
+      var append_div=shadow_dom.append("div_ele");
+      var div_para=document.createElement("p");
+      append_div.append("div_para");
+      div_para.innerText="Shadow dom div element paragraph";
+    </script>
 </body>
 </html>
