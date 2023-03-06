@@ -12,6 +12,7 @@ else{
     let let_var=20;
 }
 console.log(`let var value is ${let_var}`);
+
 if(23>3){
     const const_var=10;
 }

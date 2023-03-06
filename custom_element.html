@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Elements</title>
+  </head>
+  <body>
+    <h1>Custom Element Creation</h1>
+    <!-- <cust-ele></cust-ele> -->
+    <p is="para-ele"></p>
+    <script>
+      //autonomous custom element
+      /*class customElement extends HTMLElement{
+        constructor(){
+            super();
+        var div=document.createElement("div")
+        var shadow_dom=this.attachShadow({mode:"open"});
+        var para=document.createElement("p");
+        var append_div=shadow_dom.appendChild(div);
+        append_div.appendChild(para);
+        para.innerText="Shadow dom text in custom Element";
+    } 
+  }
+     customElements.define("cust-ele",customElement);
+     var cust_element=document.createElement("cust-ele");
+     document.body.appendChild(cust_element);*/
+      //buildin custom elements
+
+      class customElement extends HTMLParagraphElement {
+        constructor() { 
+          super()
+          var img = document.createElement("img");
+          img.setAttribute("src", "cat pic.jpg");
+          var shadow_dom = this.attachShadow({ mode: "open" });
+          shadow_dom.appendChild(img);
+          img.setAttribute("title", "cat pic");
+
+          var para = createElement("p");
+          shadow_dom.appendChild(para);
+          img.addEventListener("hover", () => {
+            para.innerText = "Image is focusing";
+          });
+        }
+      }
+      customElements.define("para-ele", customElement);
+      var cust_element = document.createElement("para-ele");
+      document.body.appendChild(cust_element);
+    </script>
+  </body>
+</html>

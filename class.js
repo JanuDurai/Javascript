@@ -37,3 +37,4 @@ class class_name{
 var obj3=new class_name;
 obj3.public_func();
 //obj3.#private_func();
+
