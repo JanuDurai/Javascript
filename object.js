@@ -4,9 +4,9 @@ var object={name:["janu","boos","boomi","pradhi"],
                 console.log(`Hi ${this.name[0]}.Your age is ${object.age}`)
              },
              greetfunc(index){
-                console.log(`Welcome ${object.name[index]}. Your age is ${object.age}`)
+                console.log(`Welcome ${object.name[index]}. Your age is ${object["age"]}`)
              }
-           }
+            }
              object.printfunc();
              console.log(`object.name:${object.name}`);
               object.age=45;
@@ -22,7 +22,8 @@ var object_prop={name:{first_name:"janu",
      object_prop.name.first_name="Janu";
      object_prop.name["middle_name"]="Shree";
      object_prop["name"]["last_name"]="Durai";
-     console.log(`name: ${object_prop.name["first_name"]} ${object_prop["name"]["middle_name"]} ${object_prop.name.last_name}`);
+    console.log(object_prop.name);
+     //console.log(`name: ${object_prop.name["first_name"]} ${object_prop["name"]["middle_name"]} ${object_prop.name.last_name}`);
      object_prop["dept"]="EEE";
      console.log(object_prop.dept);
      object_prop.ageprint=function(){
@@ -34,25 +35,27 @@ var object_prop={name:{first_name:"janu",
         object_prop[key]=value;
        console.log(`Creating members outside obj, Member value is ${object_prop.year}`);
 
-//   function create_object(name){
-//     var obj={};
-//          obj.name=name;
-//           obj.disp=function (){
-//             console.log(obj.name);
-//          };
-//         return obj;
-//   }
-//     var obj1=create_object("janu");
-//      console.log(obj1.name)
-//      obj1.disp();
+       function without_obj(name){
+         var obj={};
+         obj.name=name;
+           obj.disp=function(){
+             console.log(obj.name);
+         }
+         return obj;
+     }
+         var obj1=without_obj("janu");
+         console.log(obj1.name);
+     obj1.disp();
+
      function create_object(name){
         this.name=name;
         this.disp= function(){
             console.log(this.name);
         };
+          
        }
      var obj2=new create_object("shree");
     obj2.disp();
 
-    
 
+    

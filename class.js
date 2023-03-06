@@ -1,4 +1,4 @@
-/*class animals{
+class animals{
     constructor(name){
         this.name=name;
     }
@@ -7,21 +7,10 @@
     };
 }
 var obj1=new animals("Cat");
-obj1.disp_names();*/
-
-
-class animal{
-    constructor(name){
-        this.name=name;
-    }
-   disp(){
-        console.log(this.name);
-    }
-}
-// var obj1=new animal("cat");
-// obj1.disp();
+obj1.disp_names();
 /*Private property*/ 
-class sound extends animal{
+
+class sound extends animals{
     #food;
     constructor(name,sound,food)
     {

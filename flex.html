@@ -1,63 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>flex</title>
     <style>
         #container{
-            display:flex; 
-            flex-wrap:nowrap;
-            /* gap:10px 10px; */
-            background-color:skyblue;
-            /* flex-direction: row-reverse; */
+            display:flex;
+            border:2px solid black;
+            background-color:aquamarine;
+            flex-direction:row;
         }
         .item{
-            border:5px solid burlywood;
-            background-color:lightgreen;
-            width:200px;
-            height:350px;
-            
-        }
-        .item5{
-            order:3;
-        }
-        #grid{
-         display:grid;
-         grid-template-columns:200px 200px 200px;
-         gap:5px 5px;
-         border:5px solid purple;
-        }
-        .grid{
-            width:200px;
-            height:200px;
-            border:5px solid burlywood;
-        }
-        .grid item4{
-            
+            border:2px solid black;
+            padding:5px 8px;
+            margin:12px 10px;
+            background-color:bisque;
+            color:red;
         }
     </style>
 </head>
 
 <body>
     <div id="container">
-        <p class="item item1">1. Paragraphs are medium-sized units of writing, longer than sentences, but shorter than sections, chapters, or entire works. Because they connect the “small” ideas of individual sentences to a “bigger” idea, paragraph structure is essential to any writing for organization, flow, and comprehension. </p>
-        <p class="item item2">2. Students have a lot of questions when it comes to writing a paragraph: How many sentences should you use? How do you transition within a paragraph? When do you end a paragraph? Etc. Below we explain everything you need to know about paragraph structure to write like an expert, including several paragraph examples. </p>
-        <p class="item item3">3. Before we dive into paragraph structure, let’s start with paragraph meaning. A paragraph is an individual segment of writing that discusses a central idea, typically with more than one sentence. It even has its own paragraph symbol in copyediting, called the pilcrow (¶), not to be confused with the section symbol called the silcrow  that’s common in legal code. </p>
-        <p class="item item4">4. Topic sentences, also known as “paragraph leaders,” introduce the main idea that the paragraph is about. They shouldn’t reveal too much on their own, but rather prepare the reader for the rest of the paragraph by stating clearly what topic will be discussed. </p>
-        <p class="item item5">5. The development and support sentences act as the body of the paragraph. Development sentences elaborate and explain the idea with details too specific for the topic sentence, while support sentences provide evidence, opinions, or other statements that back up or confirm the paragraph’s main idea. </p>
-        <p class="item item6">6. Last, the conclusion wraps up the idea, sometimes summarizing what’s been presented or transitioning to the next paragraph. The content of the conclusion depends on the type of paragraph, and it’s often acceptable to end a paragraph with a final piece of support that concludes the thought instead of a summary. </p>
+        <p class="item item1">HTML (HyperText Markup Language) is the code that is used to structure a web page and its content. For example, content could be structured within a set of paragraphs, a list of bulleted points, or using images and data tables. As the title suggests, this article will give you a basic understanding of HTML and its functions.</p>
+        <p class="item item2">HTML is a markup language that defines the structure of your content. HTML consists of a series of elements, which you use to enclose, or wrap, different parts of the content to make it appear a certain way, or act a certain way. The enclosing tags can make a word or image hyperlink to somewhere else, can italicize words, can make the font bigger or smaller, and so on. For example, take the following line of content:</p>
+        <p class="item item3">Attributes contain extra information about the element that you don't want to appear in the actual content. Here, class is the attribute name and editor-note is the attribute value. The class attribute allows you to give the element a non-unique identifier that can be used to target it (and any other elements with the same class value) with style information and other things. Some attributes have no value, such as required.</p>
+        <p class="item item4">The elements have to open and close correctly so that they are clearly inside or outside one another. If they overlap as shown above, then your web browser will try to make the best guess at what you were trying to say, which can lead to unexpected results. So don't do it!</p>
+        <p class="item item5">doctype. It is a required preamble. In the mists of time, when HTML was young (around 1991/92), doctypes were meant to act as links to a set of rules that the HTML page had to follow to be considered good HTML, which could mean automatic error checking and other useful things. However, these days, they don't do much and are basically just needed to make sure your document behaves correctly. That's all you need to know for now.</p>
     </div>
-    <div id="grid">
-        <p class="grid item1">1</p>
-        <p class="grid item2">2</p>
-        <p class="grid item3">3</p>
-        <p class="grid item4">4</p>
-        <p class="grid item5">5</p>
-        <p class="grid item6">6</p>
-        <p class="grid item7">7</p>
-    </div>
+    <script>
+
+    </script>
 </body>
 </html>

@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dom interface</title>
     <style>
         div{
             border:2px solid red;
-            display:block;
+            display:block; 
         }
     </style>
 </head>
@@ -27,7 +27,7 @@
     var cancel=document.getElementById("cancel");
     var abort_content=document.getElementById("abort_content");
     var controller=new AbortController();
-    var signal=controller.abort
+    var signal=controller.signal
     submit.addEventListener("click",(event)=>{
         abort_content.innerText="Thank you! for submitting the form"
     })
@@ -35,7 +35,7 @@
         // controller.abort();
         abort_content.innerText="Oops! There is an error"
     },{signal})
-    console.log(signal.aborted);
    </script>
+   <script src="cookie.js"></script>
 </body>
 </html>

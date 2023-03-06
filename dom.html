@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shadow dom</title>
+    <style>
+        p{
+            color:red;
+        }
+      </style>
+
 </head>
+
 <body>
+    <p>This is the first paragraph</p>
     <p>DOM-Document Object Model</p>
     <script>
-       var shadow_host=document.querySelector("p");
-       var shadow_dom=shadow_host.attachShadow({mode:"open"});
-       var para1=document.createElement("p");
-       shadow_dom.append("para1");
-       para1.innertext="Shadow dom inner text";
-      var div_ele=document.createElement("div");
-      var append_div=shadow_dom.append("div_ele");
-      var div_para=document.createElement("p");
-      append_div.append("div_para");
-      div_para.innerText="Shadow dom div element paragraph";
+        var shadow_host = document.querySelector("p");
+        var shadow_dom = shadow_host.attachShadow({ mode: "open" });
+        var para1 = document.createElement("p");
+        para1.innerText = "Shadow dom inner text";
+
+        var div_ele = document.createElement("div");
+        var div_para = document.createElement("p");
+
+        var append_div = shadow_dom.appendChild(div_ele);
+        var para_ele=append_div.appendChild(para1);
+        append_div.appendChild(div_para);
+       
+        para1.setAttribute("class", "para_ele")
+        var style = document.createElement("style");
+         para_ele.appendChild(style);
+        style.textContent = `p{
+        color:blue;
+        border:2px solid green;
+          }`;
+        div_para.innerText = "Shadow dom div element paragraph";
     </script>
 </body>
 </html>

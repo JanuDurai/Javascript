@@ -51,7 +51,9 @@
             display:inline-block 
 
         } 
-
+        #formpara{
+            color:red;
+        }
     </style> 
 
 </head> 
@@ -108,7 +110,7 @@
 
       </div> 
 
-      
+      <div id="bottombar">HTML (HyperText Markup Language) is the code that is used to structure a web page and its content. For example, content could be structured within a set of paragraphs, a list of bulleted points, or using images and data tables. As the title suggests, this article will give you a basic understanding of HTML and its functions. </div>
 
  
  
@@ -257,16 +259,16 @@
          var form=document.getElementById("form") 
 
          form.addEventListener('submit',preventdefault); 
+         var form_content=document.getElementById("formpara");
 
-         function preventdefault(event){ 
+         function preventdefault(event){
+            if(name.value===""||dept.value==="") {
+                event.preventDefault();
+                form_content.innerText="Please fill both the fields";
+                
+            }
+         }
 
-            if(name.value===""||dept.value===""){ 
-
-               event.preventDefault(); 
-
-             document.getElementById("formpara").innerText="Please fill both the fields"} 
-
-            } 
 
         var bubbling=document.getElementById("bubbling"); 
 
@@ -288,7 +290,18 @@
 
         } 
 
- 
+        const bottomBar = document.getElementById("bottombar");
+
+        const viewport = window.visualViewport;
+
+        function resizeHandler() {
+
+        bottomBar.style.display = viewport.scale > 1.3 ? "none":"block";
+         
+         }
+
+        window.visualViewport.addEventListener("resize", resizeHandler);
+
  
 
     </script>  
