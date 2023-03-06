@@ -30,22 +30,21 @@
 
       class customElement extends HTMLParagraphElement {
         constructor() { 
-          super()
-          var img = document.createElement("img");
-          img.setAttribute("src", "cat pic.jpg");
-          var shadow_dom = this.attachShadow({ mode: "open" });
-          shadow_dom.appendChild(img);
-          img.setAttribute("title", "cat pic");
-
-          var para = createElement("p");
-          shadow_dom.appendChild(para);
-          img.addEventListener("hover", () => {
-            para.innerText = "Image is focusing";
-          });
+          super();
+           var para=document.createElement("p");
+           var style=document.createElement("style");
+           var shadow_dom=this.attachShadow({mode:"open"});
+           shadow_dom.appendChild(para);
+           shadow_dom.appendChild(style);
+           para.innerText="Build-in custom element";
+           style.textContent = `p{
+           color:blue;
+           border:2px solid green;
+          }`;
         }
-      }
-      customElements.define("para-ele", customElement);
-      var cust_element = document.createElement("para-ele");
+      }  
+      customElements.define("para-ele", customElement,{extends:"p"});
+      var cust_element = document.createElement("p",{is:"para-ele"});
       document.body.appendChild(cust_element);
     </script>
   </body>
