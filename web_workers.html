@@ -35,9 +35,7 @@
 
    
         const worker=new Worker('generate.js');
-        worker.addEventListener('message', (message) => {
-  document.querySelector('#output').textContent = `Finished generating ${message.data} primes!`;
-});      
+      
     </script>
 </body>
 </html>
