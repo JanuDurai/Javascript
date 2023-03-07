@@ -102,6 +102,7 @@ function passing_parameter3([name,age]){
 passing_parameter1({name:"janu",age:20});
 passing_parameter2({name:"janu",age:20});
 passing_parameter3(["janu",20]);
+
 //fail soft destruction
 var list = [7, 42]
         var [a = 1, b = 2, c = 3, d] = list;
@@ -110,13 +111,76 @@ var list = [7, 42]
         console.log(c === 3);
         console.log(d === undefined);
         console.log(b===2);
-export function sum (x, y) { return x + y }
-export var pi = 3.141593
 
-//  someApp.js
-import * as math from "lib/math"
-console.log("2π = " + math.sum(math.pi, math.pi))
+//class
+class animals{
+    constructor(name){
+        this.name=name;
+    }
+    disp(){
+        console.log(this.name);
+    }
+}
+var animal_obj=new animals("dog");
+animal_obj.disp();
+//inheritance
+class animalsound extends animals{
+    constructor(name,sound,food){
+        super(name);
+        this.sound=sound;
+        this.food=food;
+    }
+      disp(){
+        console.log(`name:${this.name},sound: ${this.sound},food: ${this.food}`);
+    }
+    static static_fun(){
+        console.log("static function");
+    }
+}
+var animalsound_obj=new animalsound("cat","bow-bow","milk");
+animalsound_obj.disp();
+//static function 
+animalsound.static_fun();
 
-//  otherApp.js
-import { sum, pi } from "lib/math"
-console.log("2π = " + sum(pi, pi))
+//getter and setter
+var object4={
+    set current(name){
+        this.array2.push(name);
+    }, array2:[],
+    get printarray(){
+        return this.array2[this.array2.length-1];
+    }
+}
+object4.current="janu";
+object4.current="shree";
+object4.current="durai";
+console.log(object4.printarray);
+
+var source1={name:"janu",age:20,dept:"eee"};
+var source2={phno:123456,email:"janushreedurai@gmail.com"};
+var target={name:"janu",marks:500,Result:"pass"};
+Object.assign(target,source1);
+console.log(target);
+Object.assign(target,source1,source2);
+console.log(target);
+
+//iterators
+var string="janu";
+for(iterator=0;iterator<string.length;iterator++){
+    console.log(string[iterator]);
+}
+console.log("string functions")
+console.log([ 1, 3, 4, 2 ].find(x => x > 3) );
+console.log([ 1, 3, 4, 2 ].findIndex(x => x > 3));
+console.log(string.repeat(3));
+console.log(string.startsWith("ja"));
+console.log("hello".endsWith("lo"));
+console.log("hello".includes("ll"));
+console.log("number functions")
+console.log(Number.isNaN(42));
+console.log(Number.isNaN(NaN));
+console.log(Number.isFinite(Infinity));
+console.log(Number.isFinite(123));
+console.log(Number.isSafeInteger(124));
+console.log(Math.trunc(43.90));
+console.log(Math.sign(-3214)+" "+ Math.sign(144));
