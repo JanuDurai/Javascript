@@ -4,4 +4,4 @@ localStorage.getItem('name');
 
 sessionStorage.setItem('dept','eee');
 
-document.cookie = "username=Janu; expires=Tues, 7 Mar 2023"; 
+document.cookies='name:janu';

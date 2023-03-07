@@ -4,21 +4,22 @@ var obj={name:"janu",age:23,
      }}
     // obj.disp();
      console.log(Object.getPrototypeOf(obj));
-
+   
      //prototypes
      function prototype_of(){
          this.name="janu";
      }
-     var object1=new  prototype_of();
+     var object1=new prototype_of();
      var object2=object1;
      do{
       object2=Object.getPrototypeOf(object2);
       console.log(object2);
      } while(object2);
+    prototype_of.prototype.dept="eee";
+   console.log(object1.dept);
 
 //shadowing prototype
      var date=new Date();
-      var object=date;
      date.getDate=function(){
       console.log("Shadow prototype");
      }

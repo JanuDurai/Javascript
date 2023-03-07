@@ -4,46 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Canvas element</title>
 </head>
 <body>
-    <!-- <canvas id="2d_canva">
-        <p>this is 2d canva</p> </canvas> -->
-    <canvas id="ball_draw" width="300" height="300"></canvas>
+    <canvas id="2d_canva">
+        <p>this is 2d canva</p> </canvas>
     <script>
-    // var canva=document.getElementById("2d_canva");
-    // canva.width=window.innerWidth;
-    // canva.height=window.innerHeight;
-    // var context=canva.getContext("2d");
-    // context.fillStyle="yellow";
-    // context.fillRect(80,50,80,50);
-    
-     
-    class ball_draw{
-        constructor(x_axis,y_axis,velo_x,velo_y,size,color){
-             this.x_axis=x_axis;
-             this.y_axis=y_axis;
-             this.velo_x=velo_x;
-             this.velo_y=velo_y;
-             this.size=size;
-             this.color=color;
-        }
-         draw(){
-            var canvas=document.getElementById("ball_draw");
-             if(canvas.getcontext){
-             var ctx=canvas.getContext("2d"); 
-             ctx.beginPath();
-             ctx.fillStyle=this.color;
-             ctx.arc(this.x_axis, this.y_axis, this.size, 0, 2 * Math.PI);
-             ctx.fill();
-             }
-        } 
-}   
-  
-var shape1=new ball_draw(50,100,4,4,10,"violet");
-    shape1.draw();
-var shape2=new ball_draw(100,200,8,8,20,"pink");
-    shape2.draw();
+    var canva=document.getElementById("2d_canva");
+    canva.width=window.innerWidth;
+    canva.height=window.innerHeight;
+    var context=canva.getContext("2d");
+    context.fillStyle="yellow";
+    context.fillRect(80,50,80,50);
     </script>
 </body>
 </html>

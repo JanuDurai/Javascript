@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web workers</title>
+</head>
+<body>
+    <button id="but1">Generate even numbers</button>
+    <p id="but1_con"></p>
+    <button id="but2">Generate odd numbers</button>
+    <p id="but2_con"></p>
+    <button id="reload">reload</button>
+    <input type="text" id=""text_content>
+    <script>    
+    var even_number=0;
+       var even_but=document.getElementById("but1");
+       var odd_but=document.getElementById("but2");
+        var para=document.getElementById("but1_con");
+        even_but.addEventListener("click",()=>{
+            para.innerText+=even_number ;
+            even_number=even_number+2;
+        })
+        var odd_number=1;
+        var para1=document.getElementById("but2_con");
+        odd_but.addEventListener("click",()=>{
+            para1.innerText+=odd_number ;
+            odd_number=odd_number+2;
+            });
+       var but3=document.getElementById("reload");
+       but3.addEventListener("click",()=>{
+       document.location.terminate();
+        })
+
+   
+        const worker=new Worker('generate.js');
+        worker.addEventListener('message', (message) => {
+  document.querySelector('#output').textContent = `Finished generating ${message.data} primes!`;
+});      
+    </script>
+</body>
+</html>
+
