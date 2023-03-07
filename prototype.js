@@ -39,5 +39,5 @@ var obj={name:"janu",age:23,
 
 var object4=new create_prototype("janu");
 object4.disp();
-console.log(Object.hasOwn(obj,"name"));
-console.log(Object.hasOwn(obj,"dept"))
+//console.log(Object.hasOwn(obj,"name"));
+//console.log(Object.hasOwn(obj,"dept"));
