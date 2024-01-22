@@ -1,24 +1,22 @@
-// async function fetchProducts() {
-//     try {
-//       const response = await fetch('C:\Users\Admin\Desktop\js\products.json');
-//       if (!response.ok) {
-//         throw new Error(`HTTP error: ${response.status}`);
-//       }
-//       const data = await response.json();
-//       console.log(data[0].name);
-//     }
-//     catch (error) {
-//       console.error(`Could not get products: ${error}`);
-//     }
-//   }
-  
-//   fetchProducts();
-const fetchPromise = fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
+async function async_func(){
+try{
 
-console.log(fetchPromise);
-console.log("Started request…");
-fetchPromise.then((response) => {
-  console.log(`Received response: ${response.status}`);
-});
+          let fetchPromise = await fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
+          if(!fetchPromise.ok){
+              throw new Error(`Response status: ${fetchPromise.status}`)
+          }
+          var data=await fetchPromise.json();
+          // console.log(`Json data is : ${data[4].name}`);
+          return data;
+}
 
+catch{
+  console.error(`Error : ${fetchPromise.error}`);
+}
+     
+}
 
+let json_data = async_func()
+.then((response)=>{
+  console.log(`Response : ${response[0].name}`);
+})
