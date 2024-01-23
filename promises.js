@@ -75,5 +75,14 @@ console.log(fetchpromise);
 //             .catch((error)=>{
 //                 console.error(error);
 //             })
+// Promise object
 
-
+var promise = new Promise (function(resolve,reject){
+  resolve("Request resolved");
+  reject(new Error('Error'))
+})
+promise.then((result)=>{
+  console.log(result)
+}, (error)=>{
+  console.log(error)
+})

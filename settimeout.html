@@ -5,22 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="async,promise.js"  defer ></script>
 </head>
 <body>
   <button id="set_alarm">set alarm</button>
   <p id="content"></p>
-  <script>
-    
-var button=document.getElementById("set_alarm");
-var para=document.getElementById("content");
-button.addEventListener("click",()=>{
-  // setInterval(()=>{
-  //  para.innerText +="It's time for wake up";
-  // });
-  setTimeout(()=>{
-   para.innerText ="It's time for wake up";
-  });
-});
-</script>
 </body>
 </html>
