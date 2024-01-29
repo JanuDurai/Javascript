@@ -75,3 +75,10 @@ func_call();
     // result_func(1);
     
     
+
+
+    console.log(`janu`);
+    setTimeout(()=>{
+        console.log(`Content display after 3s`),3000
+    })
+    console.log(`shree`);

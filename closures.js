@@ -5,21 +5,22 @@ else{
    var global_scope=20;
 }
 console.log(`var value is ${global_scope}`)
-if(2>3){
-   let let_var=10;
-}
-else{
-    let let_var=20;
-}
-console.log(`let var value is ${let_var}`);
 
-if(23>3){
-    const const_var=10;
-}
-else{
-    const const_var=20;
-}
-console.log(`const var value is ${const_var}`)
+// if(2>3){
+//    let let_var=10;
+// }
+// else{
+//     let let_var=20;
+// }
+// console.log(`let var value is ${let_var}`);
+
+// if(23>3){
+//     const const_var=10;
+// }
+// else{
+//     const const_var=20;
+// }
+// console.log(`const var value is ${const_var}`)
 
 function outer_func(){
     let outer_var=10;
@@ -42,3 +43,25 @@ function closure_func()
 }
      var func_return=closure_func();
      func_return();
+     function closure_func()
+     {
+         let outer_var=20;
+         function closure_innerfunc(){
+             outer_var=100;
+             console.log(`outerclosure function var : ${outer_var}`)
+         } 
+        return closure_innerfunc;
+     }
+          var func_return=closure_func();
+          func_return();
+     
+
+
+    function addition(x){
+        return function(y){
+            return x+y;
+        }
+    }
+
+    let add=addition(5);
+    console.log(add(5));
