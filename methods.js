@@ -203,43 +203,21 @@ arrange_array(array);
 
 
 
-const fileSystem = {
-   root: {
-     files: ['file1.txt', 'file2.txt'],
-     subdirectories: {
-       folderA: {
-         files: ['fileA1.txt', 'fileA2.txt'],
-         subdirectories: {
-           folderB: {
-             files: ['fileB1.txt', 'fileB2.txt'],
-           }
-         }
-       },
-       folderC: {
-         files: ['fileC1.txt', 'fileC2.txt'],
-       }
-     }
-   }
- };
- 
-//  From this obj get all the file paths as array. Output need to be 
-  
-//  [
-//    'root/file1.txt',
-//    'root/file2.txt',
-//    'root/folderA/fileA1.txt',
-//    'root/folderA/fileA2.txt',
-//    'root/folderA/folderB/fileB1.txt',
-//    'root/folderA/folderB/fileB2.txt',
-//    'root/folderC/fileC1.txt',
-//    'root/folderC/fileC2.txt',
-//  ]
-
-
-
 string=string.split(" ");
 console.log(string.at(-1));
 
 // console.log(string.charAt(2));
 
 console.log("janu".concat(" ","shree"));
+
+
+let array_objects=[{aname:"j" ,adept:"eee"},{aname:"a",adept:"ece"},{aname:"n",adept:"ei"}];
+
+array_objects.map((element)=>{
+       console.log(element.aname,element.adept);
+})
+let filter_array=[];
+array_objects.filter((element)=>{
+               filter_array.push(element.aname);
+});
+console.log(filter_array)

@@ -203,11 +203,13 @@ animalsound.static_fun();
 var object4 = {
     set current(name) {
         this.array2.push(name);
-    }, array2: [],
+    }, 
+    array2: [],
     get printarray() {
         return this.array2;
     }
 }
+
 object4.current = "janu";
 object4.current = "shree";
 object4.current = "durai";

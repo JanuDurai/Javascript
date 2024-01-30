@@ -84,5 +84,10 @@ var promise = new Promise (function(resolve,reject){
 promise.then((result)=>{
   console.log(result)
 }, (error)=>{
-  console.log(error)
+  console.log(error.then((result)=>{
+    console.log(result)
+  }, (error)=>{
+    console.log(error)
+  })
+  )
 })
