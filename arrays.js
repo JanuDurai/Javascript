@@ -111,6 +111,10 @@ array=[20,34,78,19,21,47,7];
  console.log(flatArray.flatMap((e)=> e>5?e:0
 ));
 
+// Join a arrayof string 
+console.log(arrayOfString.flatMap((string)=> string.split('')));
+console.log(arrayOfString.flatMap((string)=> string.split(' ')));
+
 
 //  const fruits=new Array(4); 
 
