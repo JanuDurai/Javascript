@@ -19,6 +19,7 @@
 
 console.log(`Replaced an element in array: ${array.with(2,76)}`); 
 
+
 let secondArray=[100,200,300];
     let concatArray=array.concat(secondArray);
     console.log(`Concating two arrays: ${concatArray}`);   
@@ -44,7 +45,73 @@ secondArray=[23,19,8];
            console.log(secondArray.every((element)=>
                            array.includes(element)));
 
- 
+console.log([2,5,8,1,4,6,7].fill({a:1,b:2},2,5));
+console.log([2,5,8,1,4,6,7].fill("string",2,5));
+console.log([2,5,8,1,4,6,7].fill(0,-4,-1));
+console.log([2,5,8,1,4,6,7].fill(0,-4));
+
+
+console.log(["t","w","e"].some((c)=>
+   c=='a'||c=='e'||c=='i'||c=="o"||c=="u"));
+console.log([5,2,6,3,7].filter((e)=> e>5));
+
+
+ function isWordContainVowel(string){
+    let result;
+       string.split("").some((character)=>
+           result = character=='a'||character=='e'||character=='i'||character=='o'||character=='u'
+      )
+      return result;
+ }
+
+   let arrayOfString=["janu","puvi","rhythm","Mythy"];
+
+   console.log(`Filter array of strings which contain vowel: ${arrayOfString.filter(isWordContainVowel)}`);
+
+let arrayOfObjects=[{name:{firstname:"janu",lastname:"shree"},dept:"eee"},{name:{firstname:"vasu",lastname:"mitha"},dept:"cse"},
+                      {name:{firstname:"sas",lastname:"mitha"},dept:"ece"}]
+
+      function findObjectProperty(arrayOfObjects){
+                  arrayOfObjects.forEach((object)=>{
+                     console.log(`firstname: ${object.name.firstname }   lastname: ${object.name.lastname}`);
+      })
+    }
+    findObjectProperty(arrayOfObjects);
+
+console.log(array.find((e)=> e>50 ));
+array=[20,34,78,19,21,47,7];
+    function findPrimenumber(number){
+           for(let i=2;i<number/2;i++){
+                if(number%i==0)
+                 return false;
+           }
+          return true;
+    }
+     console.log(`find prime number: ${array.find(findPrimenumber)}`);
+     console.log(`find last prime number in array: ${array.findLast(findPrimenumber)}`);
+
+     console.log(`filter prime numbers in array: ${array.filter(findPrimenumber)}`);
+
+       console.log(`Find index of large string in array: ${arrayOfString.findIndex((string) => string.length > 4)}`);
+       console.log(`Find last index of large string in array: ${arrayOfString.findLastIndex((string) => string.length > 4)}`);
+
+       console.log(`Find index of string janu  in array: ${arrayOfString.indexOf("janu")}`);
+         
+       arrayOfString=["janu","puvi","rhythm","janu","Mythy"];
+       console.log(`Find index of string janu  in array: ${arrayOfString.lastIndexOf("janu")}`);
+
+   let flatArray=[10,20,[30,40,[50,60],70],80];
+   console.log( flatArray.flat());
+
+    flatArray=[10,20,[30,40,[50,[60,[70,80]]]]];
+    console.log( flatArray.flat(2));
+    console.log( flatArray.flat(Infinity));
+
+ flatArray=[2,3,4,[5,6,[7,8]]];
+ console.log(flatArray.flatMap((e)=> e>5?e:0
+));
+
+
 //  const fruits=new Array(4); 
 
 // fruits[0]="guava"; fruits[1]="apple"; 
