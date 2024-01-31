@@ -184,6 +184,11 @@ function arrange_array(array) {
    let arr_len = array.length - 1;
    array = sort_array(array);
    let temp
+   array
+
+
+
+
    // console.log(array);
    for (let iterator = 1; iterator < arr_len; iterator++) {
       if (iterator % 2 == 1) {
@@ -216,8 +221,94 @@ let array_objects=[{aname:"j" ,adept:"eee"},{aname:"a",adept:"ece"},{aname:"n",a
 array_objects.map((element)=>{
        console.log(element.aname,element.adept);
 })
+
 let filter_array=[];
 array_objects.filter((element)=>{
                filter_array.push(element.aname);
 });
 console.log(filter_array)
+
+
+array=[19,23,34,45];
+let sum=0;
+array.map((element)=>{
+   sum+=element;
+})
+
+let avg= sum/array.length;
+console.log(`average: ${avg}`);
+
+avg=array.reduce((acc,curr)=>{
+      acc=acc+curr;
+      if(array.indexOf(curr)==array.length-1)
+          return acc/array.length;
+         return acc;
+},0)
+
+console.log(`avg using reduce func: ${avg}`);
+
+for(let i=1;i<=2;i++){
+   let temp=array[0];
+      for(let j=1;j<array.length;j++){
+           array[j-1]=array[j];
+      }
+      array[array.length-1]=temp;
+}
+
+console.log(`rotated array: ${array}`)
+
+string = "This is a sentence";
+let end=string.length;
+for(let i=0;i<string.length;i++){
+      if(string[i]==" "){
+         for(let j=i;j<end;j++)
+         {
+            string[i]=string[i+1];
+         }
+         end--;
+      }
+}
+
+
+string = string.replaceAll(" ","");
+console.log(`space removed: ${string}`);
+
+let string12="how";
+let string21="who";
+
+// if(string1.length==string2.length){
+//     for(let i=0;i<string.length;i++){
+//        for(let j=0;j<string2.length;j++){
+//            if(string1[i]==string2[j]){
+                
+//            }
+//        }
+//     }
+
+// }
+
+console.log(string12.split("").sort().join(""));
+string12=string12.split("").sort().join("");
+string21=string21.split("").sort().join("");
+
+if(string12==string21)
+  console.log(`Anagram`);
+else
+  console.log(`not a anagram`);
+
+
+  if(""==0)
+  console.log(`"" and 0 are equal`);
+else
+ console.log(`Not equal`);
+
+ let x=5;
+ if(1<x<6){
+   console.log(`true`);
+ }
+
+const Rectangle ={width:500, height:500};
+const area = Rectangle.width * Rectangle.heigth;
+console.log(area);//NAN
+
+console.log(4/[]);

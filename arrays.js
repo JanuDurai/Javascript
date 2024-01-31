@@ -1,174 +1,220 @@
- const fruits=new Array(4); 
+ let array=[];
+ array.length=20;
+ array[15] = 100;
+ console.log(array);
 
-fruits[0]="guava"; fruits[1]="apple"; 
+ array.length=10;
+ array[5]=100;
+ console.log(array);
 
-console.log(fruits) 
+ let arrayConstructor = new Array(10);
+ console.log(`type of Array: ${typeof array} , type of array constructor: ${typeof arrayConstructor} `)
+ arrayConstructor= Array(10,20,30,40);
+ console.log(arrayConstructor);
 
-//Array.from() 
+ array=[91,34,56,34,56,23,19,37];
+ console.log(`Char at index  2: ${array.at(2)}`);
+ console.log(`Char at index -2: ${array.at(-2)}`);
+// console.log(array[-1]);  undefined
 
-console.log(Array.from([1,2,3,4])); 
+console.log(`Replaced an element in array: ${array.with(2,76)}`); 
 
-console.log(Array.from("janu")); 
+let secondArray=[100,200,300];
+    let concatArray=array.concat(secondArray);
+    console.log(`Concating two arrays: ${concatArray}`);   
+    console.log([1,2,3].concat(4,5,6,7,8));
+    console.log([array[0]].concat(array[3],array[6]));
 
-console.log(Array.from([1,2,3,4], x=>x*2)); 
+console.log(`Copying set of elements in array: ${array.copyWithin(-4,-3,-1)}`);
 
-//Array.isArray() 
+console.log(`Copying set of elements in array: ${array.copyWithin(2,3)}`);
 
-console.log(Array.isArray([10,20])); 
+let arrayIterator = array.entries();
+// console.log(arrayIterator.next().value);
+// console.log(arrayIterator.next().value);
 
-//Array.of 
+for(const [element,index] of arrayIterator)
+  console.log(element,index);
 
-console.log(Array.of('janu','EEE','4')); 
+console.log(`every element in array > 20: ${array.every((element)=> element>20)}`);
 
-//Array.at 
+//array is a subset of another array
 
-console.log(fruits.at(1)); 
+secondArray=[23,19,8];
+           console.log(secondArray.every((element)=>
+                           array.includes(element)));
 
-//Array1.concat(array2) 
+ 
+//  const fruits=new Array(4); 
 
-console.log(fruits.concat(array2)); 
+// fruits[0]="guava"; fruits[1]="apple"; 
 
-//copyWithin 
+// console.log(fruits) 
 
-console.log(array2.copyWithin(1)); 
+// //Array.from() 
 
-console.log(array2.copyWithin(0,1,2)); 
+// console.log(Array.from([1,2,3,4])); 
 
-//entries 
+// console.log(Array.from("janu")); 
 
-var iterator=array2.entries(); 
+// console.log(Array.from([1,2,3,4], x=>x*2)); 
 
-console.log(iterator.next().value); 
+// //Array.isArray() 
 
-console.log(iterator.next().value); 
+// console.log(Array.isArray([10,20])); 
 
-//every 
+// //Array.of 
 
-var every=(element)=>element>20; 
+// console.log(Array.of('janu','EEE','4')); 
 
-console.log(array2.every(every)); 
+// //Array.at 
 
-//array.fill() 
+// console.log(fruits.at(1)); 
 
-console.log(array2.fill(30,2,4)); 
+// //Array1.concat(array2) 
 
-//filter 
+// console.log(fruits.concat(array2)); 
 
-console.log(fruits.filter(word => word.length >6)); 
+// //copyWithin 
 
-//find 
+// console.log(array2.copyWithin(1)); 
 
-console.log(fruits.find(word => word.length >6)); 
+// console.log(array2.copyWithin(0,1,2)); 
 
-//findindex 
+// //entries 
 
-console.log(array2.findIndex(element=> element%2==0)); 
+// var iterator=array2.entries(); 
 
-//findlast 
+// console.log(iterator.next().value); 
 
-console.log(array2.findLast(element=> element%2==0)); 
+// console.log(iterator.next().value); 
 
-//findLastIndex 
+// //every 
 
-console.log(array2.findLastIndex(element=> element%2==0)); 
+// var every=(element)=>element>20; 
 
-//flat 
+// console.log(array2.every(every)); 
 
-var array2=[10,20,[30,40],[50,60,70]]; 
+// //array.fill() 
 
-console.log(array2.flat()); 
+// console.log(array2.fill(30,2,4)); 
 
-//flatMap 
+// //filter 
 
-console.log(array3.flatMap(num=>num/2)); 
+// console.log(fruits.filter(word => word.length >6)); 
 
-//foreach 
+// //find 
 
-console.log(array2.forEach(element=> console.log(element))); 
+// console.log(fruits.find(word => word.length >6)); 
 
-//includes 
+// //findindex 
 
-console.log(array.includes(40)) 
+// console.log(array2.findIndex(element=> element%2==0)); 
 
-//indexof 
+// //findlast 
 
-console.log(array.indexOf(40)); 
+// console.log(array2.findLast(element=> element%2==0)); 
 
-//join 
+// //findLastIndex 
 
-console.log(fruits.join('-')); 
+// console.log(array2.findLastIndex(element=> element%2==0)); 
 
-//keys 
+// //flat 
 
-for(const key of array.keys()) 
+// var array2=[10,20,[30,40],[50,60,70]]; 
 
- console.log(key) 
+// console.log(array2.flat()); 
 
-//lastIndexOf 
+// //flatMap 
 
- console.log(fruits.lastIndexOf("guava")); 
+// console.log(array3.flatMap(num=>num/2)); 
 
- //map 
+// //foreach 
 
- console.log(array.map(x=>(x/2))); 
+// console.log(array2.forEach(element=> console.log(element))); 
 
-//pop 
+// //includes 
 
-array.pop(); 
+// console.log(array.includes(40)) 
 
-//push 
+// //indexof 
 
-array.push(40); 
+// console.log(array.indexOf(40)); 
 
-//reduce 
+// //join 
 
-console.log(array.reduce((accu,curr)=> accu+curr,0)); 
+// console.log(fruits.join('-')); 
+
+// //keys 
+
+// for(const key of array.keys()) 
+
+//  console.log(key) 
+
+// //lastIndexOf 
+
+//  console.log(fruits.lastIndexOf("guava")); 
+
+//  //map 
+
+//  console.log(array.map(x=>(x/2))); 
+
+// //pop 
+
+// array.pop(); 
+
+// //push 
+
+// array.push(40); 
+
+// //reduce 
+
+// console.log(array.reduce((accu,curr)=> accu+curr,0)); 
 
  
 
-//reverse 
+// //reverse 
 
-console.log(array.reverse()); 
+// console.log(array.reverse()); 
 
-//shift 
+// //shift 
 
-console.log(array.shift()); 
+// console.log(array.shift()); 
 
-//slice 
+// //slice 
 
-console.log(array.slice(2)); 
+// console.log(array.slice(2)); 
 
-//some 
+// //some 
 
-console.log(array.some((element)=>element%50)); 
+// console.log(array.some((element)=>element%50)); 
 
-//sort 
+// //sort 
 
-console.log(array.sort()); 
+// console.log(array.sort()); 
 
-//splice 
+// //splice 
 
-console.log(array.splice(1,0,60)); 
-
- 
-
-//tostring 
-
-console.log(array.toString()); 
-
-//unshift 
-
-console.log(array.unshift(4,5)); 
+// console.log(array.splice(1,0,60)); 
 
  
 
-//values() 
+// //tostring 
 
-const iter=array.values() 
+// console.log(array.toString()); 
+
+// //unshift 
+
+// console.log(array.unshift(4,5)); 
 
  
 
-for(const i of iter) 
+// //values() 
 
-    console.log(i); 
-    
+// const iter=array.values() 
+
+ 
+
+// for(const i of iter) 
+
+//     console.log(i);
