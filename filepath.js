@@ -17,38 +17,70 @@ const fileSystem = {
     }
   };
 
+  let arrayFilePath=[];
+  let path="";
+function findfilepath(filesystem,path,fileSystem){
+  console.log(` fie: ${filesystem}`);
+  console.log("filesystem out loop root :" , Object.keys(filesystem));
+   
+     for(const property in filesystem){
+        if(property=="root"){
+          path= path.concat(property);          
+           filesystem=[];
+           filesystem.push("fileSystem",property);
+           console.log(`filesystem root :  ${(filesystem.join("."))}`);
+           filesystem=filesystem.join(".")
+           findfilepath(filesystem,path,fileSystem)
+        }
+        if(property=="files"){
+                 filesystem=filesystem.concat(".",property);
+                 console.log(`filesystem fil : ${filesystem}`);
 
-function filePath(dir_path,filesys){
-    dir_path.map((element)=>{
-           if (element=="root"){
-               let path = "root";
-                
-               filePath(Object.getOwnPropertyNames(filesys.path),fileSystem.path);
-               console.log(path);
-           }
-           if(element == files){
-               
-           }
-    })
-       let iterator = Object.getOwnPropertyNames(filepath);
-       iterator.forEach((element) => {
-        path+=`/${iterator}`;
-        // console.log(path);
-            //    if(iterator=='files'){
-            //         filespath
-            //    }
-       });
-}
+                //  filesystem.
 
-
-var filepath_array=[],path=Object.getOwnPropertyNames(fileSystem);
-filePath(Object.getOwnPropertyNames(fileSystem),fileSystem);
-
-      
+        }
+       
+ }
 
 
-    //   let iterator = Object.getOwnPropertyNames(fileSystem.root.subdirectories.folderA.subdirectories.folderB.files); 
-    //   console.log(iterator)
+
+  }
+
+findfilepath(fileSystem,path,fileSystem);
+
+
+
+
+// let file=fileSystem;
+
+
+// function files(file){
+//   console.log(`ghjkl..................${Object.keys(file)}`);
+//   return fileSystem.concat(Object.keys(file))
+// }
+// file = files(file);
+// file = files(file);
+
+
+
+
+  //  console.log(Object.keys(fileSystem.root));
+  //  console.log(Object.keys(fileSystem.root.subdirectories));
+  //  console.log(Object.keys(fileSystem.root.subdirectories.folderA));
+  //  console.log(Object.keys(fileSystem.root.subdirectories.folderA.subdirectories));
+  //  console.log(Object.keys(fileSystem.root.subdirectories.folderA.subdirectories.folderB))
+  //  console.log(Object.keys(fileSystem.root.subdirectories.folderC));
+
+
+
+
+
+
+   
+
+
+
+
 
  //  From this obj get all the file paths as array. Output need to be 
  //  [

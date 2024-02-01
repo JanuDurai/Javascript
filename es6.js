@@ -300,11 +300,53 @@ const data = {
 
 // Object.assign()
 
-const { name_1, age_1, sub, ...otherData } = data;
-console.log(name_1, age_1, otherData, sub);
+// const { name_1, age_1, sub, ...otherData } = data;
+// console.log(name_1, age_1, otherData, sub);
 
-const promise = fetch("https://run.mocky.io/v3/43e28857-1b86-42e0-96d5-b6dac4409ffc")
-promise.then((response) => {
-    console.log(response.json());
-    return response.json();
-})
+// const promise = fetch("https://run.mocky.io/v3/43e28857-1b86-42e0-96d5-b6dac4409ffc")
+// promise.then((response) => {
+//     console.log(response.json());
+//     return response.json();
+// })
+
+//set
+let animal=new Set();
+animal.add("cat");
+animal.add("dog");
+animal.add("elephant")
+animal.add("cat");
+animal.add("cow");
+
+console.log("set",animal);
+
+console.log(animal.has("elephant"));
+console.log(animal.has("donkey"));
+
+let basket=new Map();
+basket.set("fruit","oranges")
+basket.set("vege","carrot")
+basket.set("fruit","guava")
+basket.set("vege","beetroot")
+basket.set("fruit","grapes")
+
+console.log(basket);
+
+console.log(basket.has("fruit"));
+
+console.log(basket.get("vege"));
+//    basket.delete("fruit")
+console.log(basket);
+console.log(basket.size);
+console.log(basket.clear());
+console.log(basket);
+
+// for(let i of basket.keys())
+//    console.log(i);
+
+
+let str="a quick brown fox jumps over the lazy dog"
+
+    str = str.replace("fox","dog").replace("dog","fox")
+    console.log(str);
+    
+    

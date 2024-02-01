@@ -101,11 +101,11 @@ array=[20,34,78,19,21,47,7];
        console.log(`Find index of string janu  in array: ${arrayOfString.lastIndexOf("janu")}`);
 
    let flatArray=[10,20,[30,40,[50,60],70],80];
-   console.log( flatArray.flat());
+   console.log( `flat array:`, flatArray.flat());
 
     flatArray=[10,20,[30,40,[50,[60,[70,80]]]]];
-    console.log( flatArray.flat(2));
-    console.log( flatArray.flat(Infinity));
+    console.log(`flat array`,  flatArray.flat(2));
+    console.log(`flat array:`,  flatArray.flat(Infinity));
 
  flatArray=[2,3,4,[5,6,[7,8]]];
  console.log(flatArray.flatMap((e)=> e>5?e:0
@@ -114,6 +114,10 @@ array=[20,34,78,19,21,47,7];
 // Join a arrayof string 
 console.log(arrayOfString.flatMap((string)=> string.split('')));
 console.log(arrayOfString.flatMap((string)=> string.split(' ')));
+
+console.log(arrayOfString.reduce((acc,curr)=>
+              acc.concat(" ",curr)
+),"");
 
 
 //  const fruits=new Array(4); 
