@@ -1,6 +1,6 @@
- var export_var=10;
+ let export_var=10;
 
- function exportFunction(){
+ function exportFunction(export_var){
     export_var++;
     return export_var;
 }

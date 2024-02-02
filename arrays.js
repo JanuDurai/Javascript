@@ -119,6 +119,9 @@ console.log(arrayOfString.reduce((acc,curr)=>
               acc.concat(" ",curr)
 ),"");
 
+let variable1=10;
+console.log(`${++variable1}`);
+console.log(variable1);
 
 //  const fruits=new Array(4); 
 
