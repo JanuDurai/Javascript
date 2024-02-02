@@ -2,9 +2,16 @@ var obj={name:"janu",age:23,
      disp: function(){
       console.log(`hii ${obj.name}`);
      }}
-    // obj.disp();
-     console.log(Object.getPrototypeOf(obj));
-   
+    obj.disp();
+   console.log(Object.getPrototypeOf(obj));
+   obj=new Date();
+
+   do{
+         obj=Object.getPrototypeOf(obj);
+         console.log(obj);
+    }while(obj);
+
+ 
      //prototypes
      function prototype_of(){
          this.name="janu";
@@ -21,26 +28,26 @@ var obj={name:"janu",age:23,
     prototype_of.prototype.dept="eee";
    console.log(object1.dept);
 
-//shadowing prototype
-     var date=new Date();
-     date.getDate=function(){
-      console.log("Shadow prototype");
-     }
-        date.getDate();  
+// //shadowing prototype
+//      var date=new Date();
+//      date.getDate=function(){
+//       console.log("Shadow prototype");
+//      }
+//         date.getDate();  
       
-  //creating prototype
-  var object3=Object.create(obj);
-  object3.disp();
+//   //creating prototype
+//   var object3=Object.create(obj);
+//   object3.disp();
 
-  function create_prototype(name){
-   this.name=name;
-  }
+//   function create_prototype(name){
+//    this.name=name;
+//   }
 
-  var prototype=new create_prototype("janu");
-  Object.assign(create_prototype.prototype,obj);
-   prototype.disp();  
+//   var prototype=new create_prototype("janu");
+//   Object.assign(create_prototype.prototype,obj);
+//    prototype.disp();  
 
-var object4=new create_prototype("janu");
-object4.disp();
-//console.log(Object.hasOwn(obj,"name"));
-//console.log(Object.hasOwn(obj,"dept"));
+// var object4=new create_prototype("janu");
+// object4.disp();
+// //console.log(Object.hasOwn(obj,"name"));
+// //console.log(Object.hasOwn(obj,"dept"));

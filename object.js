@@ -141,3 +141,55 @@ function displayProp(){
  cat.disp=displayProp;
  cat.disp();
 
+//getter,setter
+
+
+let getSetObject={
+   num1: 10,
+   get num2(){
+        return this.num1;
+   },
+   set num3(num4){
+     this.num1= this.num1 +num4;
+   }
+}
+
+console.log(getSetObject.num1);
+console.log(getSetObject.num2);
+getSetObject.num3=20;
+// getSetObject.num3(20);
+console.log(getSetObject.num1);
+
+//object define property
+Object.defineProperties(getSetObject,{
+     setproperty1: {
+      value:43,
+      writable:true,
+     },
+     setproperty2:{
+      value:50,
+      writable:false,
+     }
+});
+
+
+console.log(getSetObject.setproperty1);
+getSetObject.setproperty1=100;
+console.log(getSetObject.setproperty1);
+getSetObject.setproperty2=100;
+console.log(getSetObject.setproperty2);
+
+let objreference=getSetObject;
+if(getSetObject==objreference)
+  console.log("objref and getsetobj are same");
+
+getSetObject.num1=50;
+console.log(objreference.num1);
+
+if(fruit===apple)
+   console.log("fruit and apple are same obj");
+  else
+  console.log("fruit and apple are diff obj");
+
+
+
