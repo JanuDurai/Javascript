@@ -18,11 +18,11 @@ object.greetfunc(3);
 object["1"] = "standard";
 console.log(object);
 
-let displayProperties=function (){
-  console.log(`this..........: `,this.name,this.age);
+let displayProperties = function () {
+  console.log(`this..........: `, this.name, this.age);
 }
- object.disp=displayProperties;
- object.disp();
+object.disp = displayProperties;
+object.disp();
 
 
 // var object_prop={name:{first_name:"janu",
@@ -40,7 +40,8 @@ let displayProperties=function (){
 //      console.log(object_prop.name);
 //      object_prop["dept"]="EEE";
 //      console.log(object_prop.dept);
-//      object_prop.ageprint=function(){
+//      
+//  object_prop.ageprint=function(){
 //         console.log("Creating function outside object");
 //      }
 //      object_prop.ageprint();
@@ -86,19 +87,19 @@ function basket(name, color, weight, vegetable) {
 }
 
 let vege = new vegetable("carrot", "orange", "2kg")
-vege.price=250;
+vege.price = 250;
 let fruit = new basket("orange", 'orange', "1kg", vege);
 // console.log(fruit);
 
-basket.prototype.bill=1000;
-let apple=new basket ("apple", 'red', "3kg", vege);
+basket.prototype.bill = 1000;
+let apple = new basket("apple", 'red', "3kg", vege);
 console.log(`bill prototype \n`, fruit, apple);
 
 console.log("prototype of apple: \n", Object.getPrototypeOf(apple));
 // apple.bill=2000;
 console.log("prototype of fruit: \n", Object.getPrototypeOf(fruit));
-basket.prototype.disp = function(){
-        console.log(`prototype function: `, this.bill);
+basket.prototype.disp = function () {
+  console.log(`prototype function: `, this.bill);
 }
 fruit.disp();
 // delete fruit.name;
@@ -123,72 +124,73 @@ fruit.disp();
 
 //object create function
 
-let Animal ={
-       name: "cat",
-       color:"black",
+let Animal = {
+  name: "cat",
+  color: "black",
 
-       sound(){
-        console.log(`meow`);
-       }
+  sound() {
+    console.log(`meow`);
+  }
 }
-let cat= Object.create(Animal);
+let cat = Object.create(Animal);
 // cat.food="fish";
-// console.log(cat);
+// console.log(cat.name);
+cat.sound();
 
-function displayProp(){
-  console.log(`this..........: `,this.name,this.color);
+function displayProp() {
+  console.log(`this..........: `, this.name, this.color);
 }
- cat.disp=displayProp;
- cat.disp();
+cat.disp = displayProp;
+cat.disp();
 
 //getter,setter
 
 
-let getSetObject={
-   num1: 10,
-   get num2(){
-        return this.num1;
-   },
-   set num3(num4){
-     this.num1= this.num1 +num4;
-   }
+let getSetObject = {
+  num1: 10,
+  get num2() {
+    return this.num1;
+  },
+  set num3(num4) {
+    this.num1 = this.num1 + num4;
+  }
 }
 
 console.log(getSetObject.num1);
 console.log(getSetObject.num2);
-getSetObject.num3=20;
+getSetObject.num3 = 20;
 // getSetObject.num3(20);
 console.log(getSetObject.num1);
 
 //object define property
-Object.defineProperties(getSetObject,{
-     setproperty1: {
-      value:43,
-      writable:true,
-     },
-     setproperty2:{
-      value:50,
-      writable:false,
-     }
+Object.defineProperties(getSetObject, {
+  setproperty1: {
+    value: 43,
+    writable: true,
+  },
+  setproperty2: {
+    value: 50,
+    writable: false,
+  }
 });
 
 
 console.log(getSetObject.setproperty1);
-getSetObject.setproperty1=100;
+getSetObject.setproperty1 = 100;
 console.log(getSetObject.setproperty1);
-getSetObject.setproperty2=100;
+getSetObject.setproperty2 = 100;
 console.log(getSetObject.setproperty2);
 
-let objreference=getSetObject;
-if(getSetObject==objreference)
+let objreference = getSetObject;
+if (getSetObject == objreference)
   console.log("objref and getsetobj are same");
 
-getSetObject.num1=50;
+getSetObject.num1 = 50;
 console.log(objreference.num1);
 
-if(fruit===apple)
-   console.log("fruit and apple are same obj");
-  else
+if (fruit === apple)
+  console.log("fruit and apple are same obj");
+else
   console.log("fruit and apple are diff obj");
 
 
