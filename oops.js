@@ -114,12 +114,155 @@ let iife = (function (num1, num2) {
 // console.log(iife.multiply());
 
 // let i;
-for (let i = 0; i < 3; i++) {
-    const log = () => { 
-        console.log(i); }; 
-    setTimeout(log, 100);
+// for ( i = 0; i < 3; i++) {
+//     const log = () => { 
+//         console.log(i); }; 
+//     setTimeout(log, 100);
+// }
+
+
+//setter getter
+
+let propertyNameExpression = "deletegetproperty";
+
+let setgetObject = {
+    value1: [20, 85, 35, 56, 21, 88],
+    value2: "janu",
+    filterarray: [],
+    set valueDisplay(value1) {
+        this.filterarray = this.value1.filter((ele) => ele % 2 == 0);
+    },
+    get valueDisplay() {
+        return this.filterarray;
+    },
+    sumOfEvenArray: [],
+
+    get [propertyNameExpression]() {
+        return "deleted a get property";
+    }
+};
+
+setgetObject.valueDisplay = setgetObject.array;
+console.log(setgetObject.valueDisplay);
+
+Object.defineProperty(setgetObject, "setEvenSum", {
+    set(filterarray) {
+        this.sumOfEvenArray = filterarray.reduce((acc, cur) => acc = acc + cur, 0)
+    },
+});
+
+Object.defineProperty(setgetObject, "getEvenSum", {
+    get() {
+        return this.sumOfEvenArray;
+    }
+})
+
+setgetObject.setEvenSum = setgetObject.filterarray;
+
+console.log(setgetObject.getEvenSum);
+
+console.log(setgetObject[propertyNameExpression]);
+
+// console.log(setgetObject.deletegetproperty);
+
+// delete setgetObject.deletegetproperty;
+delete setgetObject[propertyNameExpression];
+
+
+//static get set
+
+class staticPropertyFunction {
+    static staticVariable1 = 10;
+    get nonstaticGetProperty() {
+        console.log(staticPropertyFunction.staticGetProperty);
+        return "nonstatic property"
+    }
+    static get staticGetProperty() {
+        this.anotherStaticFunction();
+        return "static property"
+    }
+
+    static anotherStaticFunction() {
+        console.log("accessing static func in another static function");
+        return "string";
+    }
+
+    constructor(name, age, dept) {
+        this.name = name;
+        this.age = age;
+        this.dept = dept;
+        staticPropertyFunction.staticVariable1 = "staic property value chnaged im construtor"
+        this.result = staticPropertyFunction.staticGetProperty;
+    }
 }
 
 
+// console.log(staticPropertyFunction.staticGetProperty);
+staticPropertyFunction.staticGetProperty = "static property value updated";
+console.log(staticPropertyFunction.staticGetProperty);
 
 
+
+// var staticFuncObj=new staticPropertyFunction();
+// console.log( staticFuncObj.nonstaticGetProperty);
+
+// staticFuncObj.nonstaticGetProperty="non static property value updated";
+// console.log( staticFuncObj.nonstaticGetProperty);
+
+// console.log(staticFuncObj = new staticPropertyFunction("janu", 23, "eee"));
+// console.log(staticPropertyFunction.staticVariable1);
+
+// staticPropertyFunction.staticGetProperty = "static property value updated";
+
+// staticPropertyFunction.staticVariable1 = "static value updated";
+// console.log("...................", staticPropertyFunction.staticVariable1);
+
+
+// // static property
+// staticPropertyFunction.staticVariable1="static property value changed"
+
+// console.log(staticPropertyFunction.staticVariable1);
+
+
+
+class parentClass {
+    static staticprop = "static property value";
+    static #privatestaticproperty="private static value";
+    static staticFunction() {
+        return "static function return";
+    }
+    nonstaticproperty = "non-static property";
+    nonstaticFunction() {
+        this.nonstaticproperty = "non static property value updated";
+        return "non-static function";
+
+    }
+
+    static   #staticprivatefunction(){
+        console.log(parentClass.#privatestaticproperty);
+    }
+
+    staticprivatefunctioncall(){
+        parentClass.#staticprivatefunction();
+    }
+}
+
+
+class childClass {
+
+    constructor() {
+        parentClass.staticprop = "static property changed in child classsssss";
+        this.parentStaticFuncValue = parentClass.staticFunction();
+    }
+  pri
+}
+
+// console.log(parentClass.staticprop);
+
+let childClassObject = new childClass;
+// console.log(parentClass.staticprop);
+
+// console.log(childClassObject.nonstaticFunction);
+
+let parentClassObject=new parentClass();
+parentClassObject.staticprivatefunctioncall()

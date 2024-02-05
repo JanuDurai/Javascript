@@ -346,7 +346,7 @@ console.log(basket);
 
 let str="a quick brown fox jumps over the lazy dog"
 
-    str = str.replace("fox","dog").replace("dog","fox")
+    str = str.replace("fox","dog").replace("dog","fox");
     console.log(str);
     
     
