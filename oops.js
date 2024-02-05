@@ -227,9 +227,12 @@ console.log(staticPropertyFunction.staticGetProperty);
 
 class parentClass {
     static staticprop = "static property value";
-    static #privatestaticproperty="private static value";
+    static #privatestaticproperty = "private static value";
     static staticFunction() {
         return "static function return";
+    }
+    constructor(){
+        console.log("static property value...........", this.constructor.staticprop)
     }
     nonstaticproperty = "non-static property";
     nonstaticFunction() {
@@ -238,33 +241,36 @@ class parentClass {
 
     }
 
-    static   #staticprivatefunction(){
+    static #staticprivatefunction() {
         console.log(parentClass.#privatestaticproperty);
     }
 
-    staticprivatefunctioncall(){
+    staticprivatefunctioncall() {
         parentClass.#staticprivatefunction();
     }
+    
+
 }
 
+// class childClass extends parentClass {
 
-class childClass extends parentClass{
-
-    constructor() {
-        parentClass.staticprop = "static property changed in child classsssss";
-        this.parentStaticFuncValue = parentClass.staticFunction();
-    }
-     printparentstaticproperty(){
-        console.log(parentClass.#privatestaticproperty);
-     }
-}
+//     constructor() {
+//         parentClass.staticprop = "static property changed in child classsssss";
+//         this.parentStaticFuncValue = parentClass.staticFunction();
+//     }
+//     printparentstaticproperty() {
+        // console.log(parentClass.#privatestaticproperty);
+//     }
+// }
 
 // console.log(parentClass.staticprop);
 
-let childClassObject = new childClass;
+// let childClassObject = new childClass;
 // console.log(parentClass.staticprop);
 
 // console.log(childClassObject.nonstaticFunction);
 
-// let parentClassObject=new parentClass();
+let parentClassObject=new parentClass();
 // parentClassObject.staticprivatefunctioncall()
+
+

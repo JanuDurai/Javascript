@@ -9,8 +9,11 @@
 
  let arrayConstructor = new Array(10);
  console.log(`type of Array: ${typeof array} , type of array constructor: ${typeof arrayConstructor} `)
+ console.log(arrayConstructor.length);
  arrayConstructor= Array(10,20,30,40);
+ console.log(arrayConstructor.length);
  console.log(arrayConstructor);
+
 
  array=[91,34,56,34,56,23,19,37];
  console.log(`Char at index  2: ${array.at(2)}`);
@@ -123,6 +126,13 @@ let variable1=10;
 console.log(`${++variable1}`);
 console.log(variable1);
 
+// array=[20,34,78,19,21,47,7];
+
+console.log("sorted array: ", array.sort((a,b)=> b-a));
+
+
+const arr=[2,4,7,1];
+console.log(arr.sort((a,b)=>a-b));
 //  const fruits=new Array(4); 
 
 // fruits[0]="guava"; fruits[1]="apple"; 
