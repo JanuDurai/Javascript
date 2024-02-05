@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom interface</title>
+    <style>
+        div {
+            border: 2px solid red;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label>Enter name:</label>
+        <input type="text">
+        <button id="submit">submit</button>
+        <button id="cancel">cancel</button>
+        <pre id="abort_content"> </pre>
+    </div>
+    <p>This is a first paragraph</p>
+
+    <script>
+        var submit = document.getElementById("submit");
+        var cancel = document.getElementById("cancel");
+        var abort_content = document.getElementById("abort_content");
+
+        var controller = new AbortController();
+        var signal = controller.signal
+        //   var signal=controller.abort
+
+
+        submit.addEventListener("click", (event) => {
+                abort_content.innerText = "Thank you! for submitting the form";
+
+        })
+
+        cancel.addEventListener("click", (event) => {
+            abort_content.innerText = "Oops! There is an error"
+        }, { signal })
+    </script>
+    <script src="cookie.js"></script>
+</body>
+
+</html>

@@ -248,13 +248,15 @@ class parentClass {
 }
 
 
-class childClass {
+class childClass extends parentClass{
 
     constructor() {
         parentClass.staticprop = "static property changed in child classsssss";
         this.parentStaticFuncValue = parentClass.staticFunction();
     }
-  pri
+     printparentstaticproperty(){
+        console.log(parentClass.#privatestaticproperty);
+     }
 }
 
 // console.log(parentClass.staticprop);
@@ -264,5 +266,5 @@ let childClassObject = new childClass;
 
 // console.log(childClassObject.nonstaticFunction);
 
-let parentClassObject=new parentClass();
-parentClassObject.staticprivatefunctioncall()
+// let parentClassObject=new parentClass();
+// parentClassObject.staticprivatefunctioncall()

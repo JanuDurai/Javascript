@@ -7,15 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shadow dom</title>
     <style>
-        p{
-            color:red;
+        p {
+            color: red;
         }
-      </style>
+    </style>
 
 </head>
 
 <body>
     <p>This is the first paragraph</p>
+
     <p>DOM-Document Object Model</p>
     <script>
         var shadow_host = document.querySelector("p");
@@ -27,12 +28,13 @@
         var div_para = document.createElement("p");
 
         var append_div = shadow_dom.appendChild(div_ele);
-        var para_ele=append_div.appendChild(para1);
+        append_div.appendChild(para1);
         append_div.appendChild(div_para);
-       
+
         para1.setAttribute("class", "para_ele")
+
         var style = document.createElement("style");
-         para_ele.appendChild(style);
+        para_ele.appendChild(style);
         style.textContent = `p{
         color:blue;
         border:2px solid green;
@@ -40,4 +42,5 @@
         div_para.innerText = "Shadow dom div element paragraph";
     </script>
 </body>
+
 </html>

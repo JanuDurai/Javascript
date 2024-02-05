@@ -109,3 +109,32 @@ var add_result=addition(6);
  }
  console.log("Paramaterized function and default parameter: " + add_result);
  console.log("Default parameter value:  "+ array.join())
+
+
+ 
+console.log(0.1+0.2);
+
+let data = [
+    {
+      item: 'a',
+      price: 100,
+    },
+    {
+      item: 'b',
+      price: 50,
+    },
+    {
+      item: 'c',
+      price: 500,
+    },
+  ];
+let sum=0;
+  data.forEach((element)=>{
+        sum+=element.price;
+  })
+console.log(sum/data.length);
+sum=data.reduce((acc,curr,i)=>{
+         acc+=curr.price;
+     return i==data.length-1? acc/data.length: acc;
+},0)
+console.log(sum);
