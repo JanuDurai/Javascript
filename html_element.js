@@ -1,6 +1,7 @@
 console.log(document.body.id); 
 var new_body=document.createElement("body");  
 new_body.id='new_body';   
+
 document.body=new_body;   
 console.log(document.body.id);
 

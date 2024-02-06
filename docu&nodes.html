@@ -1,70 +1,73 @@
 <html lang="en">
-  <head>
-    <title>html_elements</title>
-  </head>
-  <body id="disp_id">
-    <div id="division1">
-        <p>
-        Press <code>Shift</code> + <code>Alt</code> + <code>'c'</code> to click
-        a button
-      </p>
-      <button id="access_key">click</button> 
-      <p id="content_edit">contentEditable allow to edit the given content</p>
-    </div>
-    <input type="hidden" name="text_value" value="text"/>
-   <p id="focus_content">Element is not focused.</p>
-    <script>
-      var butt1 = document.getElementById("access_key");
-      butt1.accessKey = "c";
-      var content_edit = document.getElementById("content_edit");
-      content_edit.contentEditable = "true";
 
-      let para = document.createElement("p");
-      document.body.appendChild(para);
-      para.innerText =
-        "paragraph is appended after the last element of the document";
+<head>
+  <title>html_elements</title>
+</head>
 
-      var para_ele = document.getElementsByTagName("p");
-      console.log(`paragraph length: ${para_ele.length}`);
-      var div_ele = document.querySelector("#division1");
-      var div_para = div_ele.querySelectorAll("p");
-      console.log(`division paragrapgh length: ${div_para.length}`);
-    
-      var para_prepend = document.createElement("p");
-      document.body.prepend(para_prepend);
-      para_prepend.innerText =
-        "Paragraph is prepended at the first of the elements in the document";
+<body id="disp_id">
+  <div id="division1">
+    <p>
+      Press <code>Shift</code> + <code>Alt</code> + <code>'c'</code> to click
+      a button
+    </p>
+    <button id="access_key">click</button>
+    <p id="content_edit">contentEditable allow to edit the given content</p>
+  </div>
+  <input type="hidden" name="text_value" value="text" />
+  <p id="focus_content">Element is not focused.</p>
 
-      var hidden_ele=document.getElementsByName("text_value");
-      console.log(`Element type: ${hidden_ele[0].tagName}`);
-     
-      console.log(`Firstchild element in division ${div_ele.firstElementChild}`);
-      console.log(`firstchild in document:${document.firstChild}` )
-      console.log(`Number of elements in division: ${div_ele.childElementCount}`);
-      console.log(`Last element in division: ${div_ele.lastElementChild}`);
-      console.log(`Lastchild in document: ${document.lastChild}`);
-      console.log(`child node in division element: ${div_ele.childNodes}`);
-      console.log(`parent node of body element: ${document.body.parentNode}`);
-      console.log(`parent element of div element: ${div_ele.parentElement}`);
+  <script>
+    var butt1 = document.getElementById("access_key");
+    butt1.accessKey = "c";
+    var content_edit = document.getElementById("content_edit");
+    content_edit.contentEditable = "true";
 
-      console.log(`Body id is: ${document.body.id}`);
-      document.body.id="change_id";
-      console.log(`changed body id is: ${document.body.id}`);
+    let para = document.createElement("p");
+    document.body.appendChild(para);
+    para.innerText =
+      "paragraph is appended after the last element of the document";
 
-     document.title="document and nodes";
-     var focus_content=document.getElementById("focus_content");
-     if(focus_content.focus){
-     focus_content.innerText="Element is focused";
-      focus_content.style.color="blue";
-     } 
+    var para_ele = document.getElementsByTagName("p");
+    console.log(`paragraph length: ${para_ele.length}`);
+    var div_ele = document.querySelector("#division1");
+    var div_para = div_ele.querySelectorAll("p");
+    console.log(`division paragrapgh length: ${div_para.length}`);
 
-     console.log(`checking the given attribute is there or not: ${butt1.hasAttribute("id")}`);
-     var last_child=div_ele.lastChild
-     console.log(`checking the given node is there in the child node: ${last_child}.`);
-    </script>
-    <script src="web_storage.js"></script>
-    <script src="geolocation.js"></script>
-    <script src="web_socket.js"></script>
-  </body>
+    var para_prepend = document.createElement("p");
+    document.body.prepend(para_prepend);
+    para_prepend.innerText =
+      "Paragraph is prepended at the first of the elements in the document";
+
+    var hidden_ele = document.getElementsByName("text_value");
+    console.log(`Element type: ${hidden_ele[0].tagName}`);
+
+    console.log(`Firstchild element in division ${div_ele.firstElementChild}`);
+    console.log(`firstchild in document:${document.firstChild}`)
+    console.log(`Number of elements in division: ${div_ele.childElementCount}`);
+    console.log(`Last element in division: ${div_ele.lastElementChild}`);
+    console.log(`Lastchild in document: ${document.lastChild}`);
+    console.log(`child node in division element: ${div_ele.childNodes}`);
+    console.log(`parent node of body element: ${document.body.parentNode}`);
+    console.log(`parent element of div element: ${div_ele.parentElement}`);
+
+    console.log(`Body id is: ${document.body.id}`);
+    document.body.id = "change_id";
+    console.log(`changed body id is: ${document.body.id}`);
+
+    document.title = "document and nodes";
+    var focus_content = document.getElementById("focus_content");
+    if (focus_content.focus) {
+      focus_content.innerText = "Element is focused";
+      focus_content.style.color = "blue";
+    }
+
+    console.log(`checking the given attribute is there or not: ${butt1.hasAttribute("id")}`);
+    var last_child = div_ele.lastChild
+    console.log(`checking the given node is there in the child node: ${last_child}.`);
+  </script>
+  <script src="web_storage.js"></script>
+  <script src="geolocation.js"></script>
+  <script src="web_socket.js"></script>
+</body>
+
 </html>
- 

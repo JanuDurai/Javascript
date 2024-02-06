@@ -82,6 +82,7 @@ let arrayOfObjects=[{name:{firstname:"janu",lastname:"shree"},dept:"eee"},{name:
     findObjectProperty(arrayOfObjects);
 
 console.log(array.find((e)=> e>50 ));
+
 array=[20,34,78,19,21,47,7];
     function findPrimenumber(number){
            for(let i=2;i<number/2;i++){
@@ -107,7 +108,7 @@ array=[20,34,78,19,21,47,7];
    console.log( `flat array:`, flatArray.flat());
 
     flatArray=[10,20,[30,40,[50,[60,[70,80]]]]];
-    console.log(`flat array`,  flatArray.flat(2));
+    console.log(`flat array`,  flatArray.flat(2));``
     console.log(`flat array:`,  flatArray.flat(Infinity));
 
  flatArray=[2,3,4,[5,6,[7,8]]];
@@ -130,179 +131,191 @@ console.log(variable1);
 
 console.log("sorted array: ", array.sort((a,b)=> b-a));
 
-
 const arr=[2,4,7,1];
 console.log(arr.sort((a,b)=>a-b));
-//  const fruits=new Array(4); 
 
-// fruits[0]="guava"; fruits[1]="apple"; 
+let setArray=new Set([10,30,10,50,60,30,20]);
 
-// console.log(fruits) 
+console.log(setArray);
+
+
+let mapArray=new Map([[1,10],[2,20],[3,30],[4,40],[5,50]]);
+
+console.log(mapArray);
+
+console.log(mapArray.keys());
+console.log(mapArray.values());
+
+
+ let fruits=new Array(4); 
+
+fruits[0]="guava"; fruits[1]="apple"; 
+
+console.log(fruits) 
 
 // //Array.from() 
 
-// console.log(Array.from([1,2,3,4])); 
+console.log(Array.from([1,2,3,4])); 
 
-// console.log(Array.from("janu")); 
+console.log(Array.from("janu")); 
 
-// console.log(Array.from([1,2,3,4], x=>x*2)); 
+console.log(Array.from([1,2,3,4], x=>x*2)); 
 
 // //Array.isArray() 
 
-// console.log(Array.isArray([10,20])); 
+console.log(Array.isArray([10,20])); 
 
 // //Array.of 
 
-// console.log(Array.of('janu','EEE','4')); 
+console.log(Array.of('janu','EEE','4')); 
 
 // //Array.at 
 
-// console.log(fruits.at(1)); 
+console.log(fruits.at(1)); 
+array2=[8,6,4,79,34,70,23,36];
 
-// //Array1.concat(array2) 
+array.concat(array2) 
 
-// console.log(fruits.concat(array2)); 
+console.log(fruits.concat(array2)); 
 
 // //copyWithin 
 
-// console.log(array2.copyWithin(1)); 
+console.log(array2.copyWithin(1)); 
 
-// console.log(array2.copyWithin(0,1,2)); 
+console.log(array2.copyWithin(0,1,2)); 
 
-// //entries 
+//entries 
 
-// var iterator=array2.entries(); 
+var iterator=array2.entries(); 
 
-// console.log(iterator.next().value); 
+console.log(iterator.next().value); 
 
-// console.log(iterator.next().value); 
+console.log(iterator.next().value); 
 
-// //every 
+//every 
 
-// var every=(element)=>element>20; 
+var every=(element)=>element>20; 
 
-// console.log(array2.every(every)); 
+console.log(array2.every(every)); 
 
 // //array.fill() 
 
-// console.log(array2.fill(30,2,4)); 
+console.log(array2.fill(30,2,4)); 
 
 // //filter 
 
-// console.log(fruits.filter(word => word.length >6)); 
+console.log(fruits.filter((word) => word.length >6)); 
 
 // //find 
+fruits=["apple","guava","grapes","watermelon"]
 
-// console.log(fruits.find(word => word.length >6)); 
+console.log(fruits.find((word) => word.length > 6)); 
 
 // //findindex 
 
-// console.log(array2.findIndex(element=> element%2==0)); 
+console.log(array2.findIndex((element)=> element%2==0)); 
 
 // //findlast 
 
-// console.log(array2.findLast(element=> element%2==0)); 
+console.log(array2.findLast((element)=> element%2==0)); 
 
 // //findLastIndex 
 
-// console.log(array2.findLastIndex(element=> element%2==0)); 
+console.log(array2.findLastIndex((element)=> element%2==0)); 
 
 // //flat 
 
-// var array2=[10,20,[30,40],[50,60,70]]; 
+var array2=[10,20,[30,40],[50,60,70]]; 
 
-// console.log(array2.flat()); 
+console.log(array2.flat()); 
 
 // //flatMap 
 
-// console.log(array3.flatMap(num=>num/2)); 
+console.log(array2.flatMap((num) => num/2)); 
 
 // //foreach 
 
-// console.log(array2.forEach(element=> console.log(element))); 
+console.log(array2.forEach((element)=> console.log(element))); 
 
 // //includes 
 
-// console.log(array.includes(40)) 
+console.log(array.includes(40)) 
 
 // //indexof 
 
-// console.log(array.indexOf(40)); 
+console.log(array.indexOf(40)); 
 
 // //join 
 
-// console.log(fruits.join('-')); 
+console.log(fruits.join('-')); 
 
 // //keys 
 
-// for(const key of array.keys()) 
+for(const key of array.keys()) 
 
-//  console.log(key) 
+ console.log(key) 
 
 // //lastIndexOf 
 
-//  console.log(fruits.lastIndexOf("guava")); 
+ console.log(fruits.lastIndexOf("guava")); 
 
 //  //map 
 
-//  console.log(array.map(x=>(x/2))); 
+ console.log(array.map((x)=>(x/2))); 
 
 // //pop 
 
-// array.pop(); 
+array.pop(); 
 
 // //push 
 
-// array.push(40); 
+array.push(40); 
 
 // //reduce 
 
-// console.log(array.reduce((accu,curr)=> accu+curr,0)); 
+console.log(array.reduce((accu,curr)=> accu+curr,0)); 
 
  
 
 // //reverse 
 
-// console.log(array.reverse()); 
+console.log(array.reverse()); 
 
 // //shift 
 
-// console.log(array.shift()); 
+console.log(array.shift()); 
 
 // //slice 
 
-// console.log(array.slice(2)); 
+console.log(array.slice(2)); 
 
 // //some 
 
-// console.log(array.some((element)=>element%50)); 
+console.log(array.some((element)=>element%50)); 
 
-// //sort 
-
-// console.log(array.sort()); 
 
 // //splice 
 
-// console.log(array.splice(1,0,60)); 
+console.log(array.splice(1,0,60)); 
 
  
 
 // //tostring 
 
-// console.log(array.toString()); 
+console.log(array.toString()); 
 
 // //unshift 
 
-// console.log(array.unshift(4,5)); 
+console.log(array.unshift(4,5)); 
 
  
 
 // //values() 
 
-// const iter=array.values() 
+const iter=array.values() 
 
  
 
-// for(const i of iter) 
+for(const i of iter) 
 
-//     console.log(i);
+    console.log(i);

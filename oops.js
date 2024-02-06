@@ -77,7 +77,7 @@ classObject.disp();
 
 //immediately invoke function
 
-(function immediateInvokeFunction(num1, num2, num3) {
+(function (num1, num2, num3) {
     console.log(`immediate invoke function:`, num1 + num2 + num3);
 })(10, 20, 30);
 
@@ -114,11 +114,11 @@ let iife = (function (num1, num2) {
 // console.log(iife.multiply());
 
 // let i;
-// for ( i = 0; i < 3; i++) {
-//     const log = () => { 
-//         console.log(i); }; 
-//     setTimeout(log, 100);
-// }
+for ( let i = 0; i < 3; i++) {
+    const log = () => { 
+        console.log(i); }; 
+    setTimeout(log, 100);
+}
 
 
 //setter getter
@@ -142,7 +142,7 @@ let setgetObject = {
     }
 };
 
-setgetObject.valueDisplay = setgetObject.array;
+setgetObject.valueDisplay = setgetObject.value1;
 console.log(setgetObject.valueDisplay);
 
 Object.defineProperty(setgetObject, "setEvenSum", {
@@ -166,6 +166,7 @@ console.log(setgetObject[propertyNameExpression]);
 // console.log(setgetObject.deletegetproperty);
 
 // delete setgetObject.deletegetproperty;
+
 delete setgetObject[propertyNameExpression];
 
 

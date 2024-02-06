@@ -11,29 +11,14 @@
     <!-- <cust-ele></cust-ele> -->
     <p is="para-ele"></p>
     <script>
-      //autonomous custom element
-      /*class customElement extends HTMLElement{
-        constructor(){
-            super();
-        var div=document.createElement("div")
-        var shadow_dom=this.attachShadow({mode:"open"});
-        var para=document.createElement("p");
-        var append_div=shadow_dom.appendChild(div);
-        append_div.appendChild(para);
-        para.innerText="Shadow dom text in custom Element";
-    } 
-  }
-     customElements.define("cust-ele",customElement);
-     var cust_element=document.createElement("cust-ele");
-     document.body.appendChild(cust_element);*/
-      //buildin custom elements
 
       class customElement extends HTMLParagraphElement {
         constructor() { 
           super();
+          var shadow_dom=this.attachShadow({mode:"open"});
            var para=document.createElement("p");
            var style=document.createElement("style");
-           var shadow_dom=this.attachShadow({mode:"open"});
+          
            shadow_dom.appendChild(para);
            shadow_dom.appendChild(style);
            para.innerText="Build-in custom element";
@@ -44,8 +29,10 @@
         }
       }  
       customElements.define("para-ele", customElement,{extends:"p"});
+
       var cust_element = document.createElement("p",{is:"para-ele"});
       document.body.appendChild(cust_element);
+
     </script>
   </body>
 </html>

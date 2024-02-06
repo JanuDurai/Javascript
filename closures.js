@@ -25,7 +25,7 @@ console.log(`var value is ${global_scope}`)
 function outer_func(){
     let outer_var=10;
     function inner_func(){
-        outer_var=50;
+         outer_var=50;
     }
   inner_func();
     console.log(`outer function variable ${outer_var}`)
@@ -43,6 +43,7 @@ function closure_func()
 }
      var func_return=closure_func();
      func_return();
+     
      function closure_func()
      {
          let outer_var=20;

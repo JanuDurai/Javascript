@@ -34,7 +34,7 @@ let array=[1,2,3,4,5];
 
 //symbol
 
-console.log(Symbol("object")=== Symbol("object"));
+console.log(Symbol("object")== Symbol("object"));
 
 let symbol1 = Symbol();
 let symbol2 = Symbol();
@@ -81,22 +81,22 @@ console.log(generatorObject.next());
 console.log(generatorObject.next());
 
 
-// function * generatorFunction(n){
-//    let pre,cur,step=1;
-//    pre=cur=1;
-//    for(let i=0;i<n;i++){
-//    [pre,cur]=[cur,pre+cur];
-//           yield cur;
-//    }
-// }
+function * generatorFunction(n){
+   let pre,cur,step=1;
+   pre=cur=1;
+   for(let i=0;i<n;i++){
+   [pre,cur]=[cur,pre+cur];
+          yield cur;
+   }
+}
 
-// generatorObject = generatorFunction(5);
-// console.log(generatorObject.next());
-// console.log(generatorObject.next());
-// console.log(generatorObject.next());
-// console.log(generatorObject.next());
-// console.log(generatorObject.next());
-// console.log(generatorObject.next());
+generatorObject = generatorFunction(5);
+console.log(generatorObject.next());
+console.log(generatorObject.next());
+console.log(generatorObject.next());
+console.log(generatorObject.next());
+console.log(generatorObject.next());
+console.log(generatorObject.next());
 
 
 

@@ -150,68 +150,38 @@ const res = ar.reduce((acc, ele, i) => {
 console.log('result!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', res);
 
 
-// let split_str=string.split(" ");
-// for(let iterator of split_str)
-// {
-//     let temp=iterator.charAt(0);
-//         temp=temp.toUpperCase();
-
-//        console.log(temp);
-
-// }
-// split_str=split_str.join("");
-// console.log(split_str)
-
 // sort array odd-as even-des
 
 // array=[3,6,9,10,12,5,15,18];
 array = [1, 2, 3, 4, 5];
 
-function sort_array(array) {
-   for (let iterator = 0; iterator < array.length; iterator++) {
-      for (let inner_iterator = iterator + 1; inner_iterator < array.length; inner_iterator++) {
-         if (array[iterator] > array[inner_iterator]) {
-            let temp = array[iterator];
-            array[iterator] = array[inner_iterator];
-            array[inner_iterator] = temp;
-         }
-      }
-   }
-   return array;
-}
+console.log(array.sort((a,b)=> a-b));
 
-function arrange_array(array) {
-   let arr_len = array.length - 1;
-   array = sort_array(array);
-   let temp
-   array
+// 1 2 3 4 5
+// 1 5 2 3 4
+// 1 5 2 4 3
 
 
-
-
+let arr_len=array.length-1
    // console.log(array);
+   function arrange_array(array){
    for (let iterator = 1; iterator < arr_len; iterator++) {
       if (iterator % 2 == 1) {
          temp = array[arr_len];
-         for (let inner_iterator = arr_len; inner_iterator > iterator; inner_iterator--) {
-            array[inner_iterator] = array[inner_iterator - 1];
-         }
+         array.copyWithin(iterator+1,iterator);
          array[iterator] = temp;
       }
    }
    console.log(array);
-}
 
+   }
 arrange_array(array);
 
-// console.log(Math.ceil(4.02));
-
+console.log(Math.ceil(4.02));
 
 
 string=string.split(" ");
 console.log(string.at(-1));
-
-// console.log(string.charAt(2));
 
 console.log("janu".concat(" ","shree"));
 
@@ -246,46 +216,12 @@ avg=array.reduce((acc,curr)=>{
 },0)
 
 console.log(`avg using reduce func: ${avg}`);
-
-for(let i=1;i<=2;i++){
-   let temp=array[0];
-      for(let j=1;j<array.length;j++){
-           array[j-1]=array[j];
-      }
-      array[array.length-1]=temp;
-}
-
-console.log(`rotated array: ${array}`)
-
-string = "This is a sentence";
-let end=string.length;
-for(let i=0;i<string.length;i++){
-      if(string[i]==" "){
-         for(let j=i;j<end;j++)
-         {
-            string[i]=string[i+1];
-         }
-         end--;
-      }
-}
-
-
+string="I think Ruth's dog is cuter than your dog!"
 string = string.replaceAll(" ","");
 console.log(`space removed: ${string}`);
 
 let string12="how";
 let string21="who";
-
-// if(string1.length==string2.length){
-//     for(let i=0;i<string.length;i++){
-//        for(let j=0;j<string2.length;j++){
-//            if(string1[i]==string2[j]){
-                
-//            }
-//        }
-//     }
-
-// }
 
 console.log(string12.split("").sort().join(""));
 string12=string12.split("").sort().join("");
@@ -297,7 +233,7 @@ else
   console.log(`not a anagram`);
 
 
-  if(""==0)
+  if(""===0)
   console.log(`"" and 0 are equal`);
 else
  console.log(`Not equal`);
@@ -309,6 +245,6 @@ else
 
 const Rectangle ={width:500, height:500};
 const area = Rectangle.width * Rectangle.heigth;
-console.log(area);//NAN
+console.log(area);
 
 console.log(4/[]);

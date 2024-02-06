@@ -19,7 +19,7 @@ console.log("block scope function");
     console.log(foo() === 1);
 }
 
-const print = (print) => {
+const print = () => {
     console.log("print");
 }
 print();
@@ -47,6 +47,8 @@ object1.disp();
 //default parameters, extended parameter
 function add(num1, num2, ...a) {
     console.log(num1 + num2);
+    // console.log(a);
+   // console.log(...a);
     console.log(`extended parameter : a.length`);
 }
 add(2, 3, "false", 90, "jfghj");
@@ -72,7 +74,7 @@ console.log(`extended array ${array1}`);
 
 var string = "javascript";
 console.log(...string);
-//    console.log(...array1);
+   console.log(...array1);
 
 
 // //template literal
@@ -271,7 +273,7 @@ let obj = {
 // }
 // console.log(prop_add(obj));
 
-obj = { ...obj, k3: "v3" };
+let sobj = { ...obj, k3: "v3" };
 console.log(obj);
 
 
@@ -302,12 +304,6 @@ const data = {
 
 // const { name_1, age_1, sub, ...otherData } = data;
 // console.log(name_1, age_1, otherData, sub);
-
-// const promise = fetch("https://run.mocky.io/v3/43e28857-1b86-42e0-96d5-b6dac4409ffc")
-// promise.then((response) => {
-//     console.log(response.json());
-//     return response.json();
-// })
 
 //set
 let animal=new Set();
@@ -343,10 +339,9 @@ console.log(basket);
 // for(let i of basket.keys())
 //    console.log(i);
 
-
 let str="a quick brown fox jumps over the lazy dog"
+str = str.replace("fox","dog").replace("dog","fox");
 
-    str = str.replace("fox","dog").replace("dog","fox");
-    console.log(str);
-    
-    
+
+
+console.log(str);
